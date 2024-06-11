@@ -19,6 +19,9 @@
 *.tar.gz
 *.rar
 
+# No ignorar el archivo postgresql-42.7.3.jar en la carpeta lib
+!lib/postgresql-42.7.3.jar
+
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
