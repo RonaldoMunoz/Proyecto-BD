@@ -17,9 +17,7 @@ abstract public class Clientes {
         ) {
             stmt.setInt(1, idCliente);
 
-            try (
-                ResultSet rs = stmt.executeQuery();
-            ) {
+            try (ResultSet rs = stmt.executeQuery()) {
                 if (rs.next()) {
                     result.add(rs.getString("nombre") + " " + rs.getString("apellido"));
                     
