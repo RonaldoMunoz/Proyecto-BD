@@ -41,16 +41,13 @@ public class Panel_ReservaOpciones extends javax.swing.JPanel {
         setMaximumSize(new java.awt.Dimension(810, 640));
         setMinimumSize(new java.awt.Dimension(810, 640));
         setPreferredSize(new java.awt.Dimension(810, 640));
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButtonAtrasReserva.setBackground(new java.awt.Color(29, 29, 29));
         jButtonAtrasReserva.setForeground(new java.awt.Color(255, 255, 255));
         jButtonAtrasReserva.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/atras.png"))); // NOI18N
         jButtonAtrasReserva.setToolTipText("");
-        add(jButtonAtrasReserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 590, 60, 30));
 
         jLabelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/edificio.png"))); // NOI18N
-        add(jLabelLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, -1, 130));
 
         jButtonCancelarReserva.setBackground(new java.awt.Color(29, 29, 29));
         jButtonCancelarReserva.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
@@ -61,7 +58,6 @@ public class Panel_ReservaOpciones extends javax.swing.JPanel {
                 jButtonCancelarReservaActionPerformed(evt);
             }
         });
-        add(jButtonCancelarReserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, -1, -1));
 
         jButtonHacerReserva.setBackground(new java.awt.Color(29, 29, 29));
         jButtonHacerReserva.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
@@ -72,17 +68,14 @@ public class Panel_ReservaOpciones extends javax.swing.JPanel {
                 jButtonHacerReservaActionPerformed(evt);
             }
         });
-        add(jButtonHacerReserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, -1, -1));
 
         jLabelReserva.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabelReserva.setForeground(new java.awt.Color(255, 255, 255));
         jLabelReserva.setText("Reservas");
-        add(jLabelReserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, -1, -1));
 
         jLabelNameHotel.setFont(new java.awt.Font("Roboto Thin", 3, 24)); // NOI18N
         jLabelNameHotel.setForeground(new java.awt.Color(255, 255, 255));
         jLabelNameHotel.setText("El Descanso");
-        add(jLabelNameHotel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, -1, -1));
 
         jButtonConsultarReserva.setBackground(new java.awt.Color(29, 29, 29));
         jButtonConsultarReserva.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
@@ -93,7 +86,6 @@ public class Panel_ReservaOpciones extends javax.swing.JPanel {
                 jButtonConsultarReservaActionPerformed(evt);
             }
         });
-        add(jButtonConsultarReserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, -1, -1));
 
         panel_Interno_Options.setBackground(new java.awt.Color(29, 29, 29));
         panel_Interno_Options.setMaximumSize(new java.awt.Dimension(640, 580));
@@ -105,17 +97,71 @@ public class Panel_ReservaOpciones extends javax.swing.JPanel {
         panel_Interno_Options.setLayout(panel_Interno_OptionsLayout);
         panel_Interno_OptionsLayout.setHorizontalGroup(
             panel_Interno_OptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 640, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         panel_Interno_OptionsLayout.setVerticalGroup(
             panel_Interno_OptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 640, Short.MAX_VALUE)
         );
 
-        add(panel_Interno_Options, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, 580, 640));
-
         jLabelFondoAzul.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo3.jpg"))); // NOI18N
-        add(jLabelFondoAzul, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 640));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jButtonAtrasReserva, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addComponent(jLabelReserva))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(jButtonConsultarReserva))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(jLabelLogo))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(jLabelNameHotel))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(jButtonCancelarReserva))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(jButtonHacerReserva))
+                    .addComponent(jLabelFondoAzul, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(panel_Interno_Options, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(590, 590, 590)
+                .addComponent(jButtonAtrasReserva, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(220, 220, 220)
+                .addComponent(jLabelReserva))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(300, 300, 300)
+                .addComponent(jButtonConsultarReserva))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabelLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(160, 160, 160)
+                .addComponent(jLabelNameHotel))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(400, 400, 400)
+                .addComponent(jButtonCancelarReserva))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(350, 350, 350)
+                .addComponent(jButtonHacerReserva))
+            .addComponent(jLabelFondoAzul, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(panel_Interno_Options, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         getAccessibleContext().setAccessibleName("");
     }// </editor-fold>//GEN-END:initComponents

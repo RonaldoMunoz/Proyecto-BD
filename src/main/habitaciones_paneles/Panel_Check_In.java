@@ -44,49 +44,39 @@ public class Panel_Check_In extends javax.swing.JPanel {
         setMinimumSize(new java.awt.Dimension(640, 640));
         setName(""); // NOI18N
         setPreferredSize(new java.awt.Dimension(640, 640));
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 650, 20));
 
         jButtonAsignar.setBackground(new java.awt.Color(29, 29, 29));
         jButtonAsignar.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jButtonAsignar.setForeground(new java.awt.Color(255, 255, 255));
         jButtonAsignar.setText("Asignar");
-        add(jButtonAsignar, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 250, -1, -1));
 
         label_ConsultaDispo.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         label_ConsultaDispo.setForeground(new java.awt.Color(255, 255, 255));
         label_ConsultaDispo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         label_ConsultaDispo.setText("Check-In");
-        add(label_ConsultaDispo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 40));
 
         jTextNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextNombreActionPerformed(evt);
             }
         });
-        add(jTextNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, 190, 20));
-        add(jTextFieldPrecioNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 250, 210, -1));
 
         jLabel4.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Numero de la habitación");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, -1, 20));
 
         jLabel5.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Ingresa los datos del cliente: ");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Identificacion del cliente");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, -1, 20));
 
         jButtonAceptar.setBackground(new java.awt.Color(29, 29, 29));
         jButtonAceptar.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jButtonAceptar.setForeground(new java.awt.Color(255, 255, 255));
         jButtonAceptar.setText("Aceptar");
-        add(jButtonAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 110, -1, 20));
 
         jTextAreaListarReservas.setBackground(new java.awt.Color(29, 29, 29));
         jTextAreaListarReservas.setColumns(20);
@@ -95,12 +85,58 @@ public class Panel_Check_In extends javax.swing.JPanel {
         jTextAreaListarReservas.setRows(5);
         jScrollPane1.setViewportView(jTextAreaListarReservas);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 570, 90));
-
         jLabel1.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 570, 30));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(label_ConsultaDispo, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addGap(7, 7, 7)
+                        .addComponent(jTextNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20)
+                        .addComponent(jButtonAceptar))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(19, 19, 19)
+                        .addComponent(jTextFieldPrecioNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20)
+                        .addComponent(jButtonAsignar))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(label_ConsultaDispo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(jLabel5)
+                .addGap(23, 23, 23)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldPrecioNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonAsignar))
+                .addGap(8, 8, 8)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextNombreActionPerformed

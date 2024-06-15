@@ -43,13 +43,11 @@ public class Panel_HabitacionesOpciones extends javax.swing.JPanel {
         setMaximumSize(new java.awt.Dimension(810, 640));
         setMinimumSize(new java.awt.Dimension(810, 640));
         setPreferredSize(new java.awt.Dimension(810, 640));
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButtonServiciosDeHabitacion.setBackground(new java.awt.Color(29, 29, 29));
         jButtonServiciosDeHabitacion.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
         jButtonServiciosDeHabitacion.setForeground(new java.awt.Color(255, 255, 255));
         jButtonServiciosDeHabitacion.setText("Servicios Ofrecidos");
-        add(jButtonServiciosDeHabitacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 210, -1));
 
         jButtonListarHabitaciones.setBackground(new java.awt.Color(29, 29, 29));
         jButtonListarHabitaciones.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
@@ -60,13 +58,11 @@ public class Panel_HabitacionesOpciones extends javax.swing.JPanel {
                 jButtonListarHabitacionesActionPerformed(evt);
             }
         });
-        add(jButtonListarHabitaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 210, -1));
 
         jButtonBack.setBackground(new java.awt.Color(29, 29, 29));
         jButtonBack.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jButtonBack.setForeground(new java.awt.Color(255, 255, 255));
         jButtonBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/flecha-izquierda.png"))); // NOI18N
-        add(jButtonBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 570, 120, 60));
 
         jButtonConsultarPrecio.setBackground(new java.awt.Color(29, 29, 29));
         jButtonConsultarPrecio.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
@@ -77,19 +73,16 @@ public class Panel_HabitacionesOpciones extends javax.swing.JPanel {
                 jButtonConsultarPrecioActionPerformed(evt);
             }
         });
-        add(jButtonConsultarPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 210, -1));
 
         jButtonModificarPrecio.setBackground(new java.awt.Color(29, 29, 29));
         jButtonModificarPrecio.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
         jButtonModificarPrecio.setForeground(new java.awt.Color(255, 255, 255));
         jButtonModificarPrecio.setText("Modificar Precio");
-        add(jButtonModificarPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 210, -1));
 
         jButtonCambiarEstado1.setBackground(new java.awt.Color(29, 29, 29));
         jButtonCambiarEstado1.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
         jButtonCambiarEstado1.setForeground(new java.awt.Color(255, 255, 255));
         jButtonCambiarEstado1.setText("Cambiar Estado Habitacion");
-        add(jButtonCambiarEstado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, 210, -1));
 
         jButtonVerificarDispo.setBackground(new java.awt.Color(29, 29, 29));
         jButtonVerificarDispo.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
@@ -100,20 +93,16 @@ public class Panel_HabitacionesOpciones extends javax.swing.JPanel {
                 jButtonVerificarDispoActionPerformed(evt);
             }
         });
-        add(jButtonVerificarDispo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 210, -1));
 
         jLabel6.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Habitaciones");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Roboto Thin", 3, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("El Descanso");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/edificio.png"))); // NOI18N
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, 130));
 
         panel_Interno_Options.setBackground(new java.awt.Color(29, 29, 29));
         panel_Interno_Options.setMaximumSize(new java.awt.Dimension(640, 580));
@@ -125,17 +114,88 @@ public class Panel_HabitacionesOpciones extends javax.swing.JPanel {
         panel_Interno_Options.setLayout(panel_Interno_OptionsLayout);
         panel_Interno_OptionsLayout.setHorizontalGroup(
             panel_Interno_OptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 640, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         panel_Interno_OptionsLayout.setVerticalGroup(
             panel_Interno_OptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 640, Short.MAX_VALUE)
         );
 
-        add(panel_Interno_Options, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, 580, 640));
-
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo3.jpg"))); // NOI18N
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 640));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jButtonVerificarDispo, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(jButtonBack, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addComponent(jLabel6))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jButtonServiciosDeHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jButtonModificarPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jButtonConsultarPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jButtonCambiarEstado1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jButtonListarHabitaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(jLabel2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(jLabel1))
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(panel_Interno_Options, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(410, 410, 410)
+                .addComponent(jButtonVerificarDispo)
+                .addGap(136, 136, 136)
+                .addComponent(jButtonBack, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(210, 210, 210)
+                .addComponent(jLabel6))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(290, 290, 290)
+                .addComponent(jButtonServiciosDeHabitacion))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(370, 370, 370)
+                .addComponent(jButtonModificarPrecio))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(330, 330, 330)
+                .addComponent(jButtonConsultarPrecio))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(450, 450, 450)
+                .addComponent(jButtonCambiarEstado1))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(250, 250, 250)
+                .addComponent(jButtonListarHabitaciones))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(150, 150, 150)
+                .addComponent(jLabel2))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(panel_Interno_Options, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonListarHabitacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonListarHabitacionesActionPerformed

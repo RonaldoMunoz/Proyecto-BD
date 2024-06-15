@@ -39,27 +39,22 @@ public class Panel_Consolidado extends javax.swing.JPanel {
         setMaximumSize(new java.awt.Dimension(640, 640));
         setMinimumSize(new java.awt.Dimension(640, 640));
         setPreferredSize(new java.awt.Dimension(640, 640));
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabelMes.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabelMes.setForeground(new java.awt.Color(255, 255, 255));
-        add(jLabelMes, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 190, 150, 20));
 
         jLabel4.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Venta de servicios en el mes de:");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, 20));
 
         jLabel3.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Generar consolidado de los servicios vendidos en el mes:");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, -1, -1));
 
         jButtonConsultarConsolidado.setBackground(new java.awt.Color(29, 29, 29));
         jButtonConsultarConsolidado.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jButtonConsultarConsolidado.setForeground(new java.awt.Color(255, 255, 255));
         jButtonConsultarConsolidado.setText("Consultar");
-        add(jButtonConsultarConsolidado, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, -1, 20));
 
         mes_Seleccionado.setBackground(new java.awt.Color(29, 29, 29));
         mes_Seleccionado.setForeground(new java.awt.Color(255, 255, 255));
@@ -69,18 +64,59 @@ public class Panel_Consolidado extends javax.swing.JPanel {
                 mes_SeleccionadoActionPerformed(evt);
             }
         });
-        add(mes_Seleccionado, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
 
         label_Consolidado.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         label_Consolidado.setForeground(new java.awt.Color(255, 255, 255));
-        add(label_Consolidado, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 550, 350));
-        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 40, 650, 20));
 
         label_ConsultaDispo.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         label_ConsultaDispo.setForeground(new java.awt.Color(255, 255, 255));
         label_ConsultaDispo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         label_ConsultaDispo.setText("Generar Consolidado De Servicios Vendidos");
-        add(label_ConsultaDispo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 40));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(label_ConsultaDispo, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(jLabel3))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addComponent(mes_Seleccionado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonConsultarConsolidado))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(jLabel4)
+                .addGap(7, 7, 7)
+                .addComponent(jLabelMes, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(label_Consolidado, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(label_ConsultaDispo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(jLabel3)
+                .addGap(23, 23, 23)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(mes_Seleccionado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonConsultarConsolidado, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelMes, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10)
+                .addComponent(label_Consolidado, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
     }// </editor-fold>//GEN-END:initComponents
 
     private void mes_SeleccionadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mes_SeleccionadoActionPerformed

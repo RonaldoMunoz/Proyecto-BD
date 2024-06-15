@@ -27,8 +27,6 @@ public class JpanelModulos extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButtonInformes1 = new javax.swing.JButton();
-        jButtonInformes = new javax.swing.JButton();
         jButtonCheckIn = new javax.swing.JButton();
         jButtonCheckOut = new javax.swing.JButton();
         jButtonHabitacion = new javax.swing.JButton();
@@ -40,89 +38,181 @@ public class JpanelModulos extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        jButtonInformes = new javax.swing.JButton();
         labelUserWelcome = new javax.swing.JLabel();
+        jButtonGestionarPerfiles = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(29, 29, 29));
         setMaximumSize(new java.awt.Dimension(810, 640));
         setMinimumSize(new java.awt.Dimension(810, 640));
         setPreferredSize(new java.awt.Dimension(810, 640));
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jButtonInformes1.setBackground(new java.awt.Color(29, 29, 29));
-        jButtonInformes1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        jButtonInformes1.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonInformes1.setText("Gestionar Perfiles");
-        add(jButtonInformes1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, 130, 20));
-
-        jButtonInformes.setBackground(new java.awt.Color(29, 29, 29));
-        jButtonInformes.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        jButtonInformes.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonInformes.setText("Informes");
-        add(jButtonInformes, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 420, 100, 20));
 
         jButtonCheckIn.setBackground(new java.awt.Color(29, 29, 29));
         jButtonCheckIn.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jButtonCheckIn.setForeground(new java.awt.Color(255, 255, 255));
         jButtonCheckIn.setText("Check-In");
-        add(jButtonCheckIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 390, 100, 20));
 
         jButtonCheckOut.setBackground(new java.awt.Color(29, 29, 29));
         jButtonCheckOut.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jButtonCheckOut.setForeground(new java.awt.Color(255, 255, 255));
         jButtonCheckOut.setText("Check-Out");
-        add(jButtonCheckOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 360, 100, 20));
 
         jButtonHabitacion.setBackground(new java.awt.Color(29, 29, 29));
         jButtonHabitacion.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jButtonHabitacion.setForeground(new java.awt.Color(255, 255, 255));
         jButtonHabitacion.setText("Habitaciones");
-        add(jButtonHabitacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, -1, 20));
 
         jButtonCliente.setBackground(new java.awt.Color(29, 29, 29));
         jButtonCliente.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jButtonCliente.setForeground(new java.awt.Color(255, 255, 255));
         jButtonCliente.setText("Cliente");
-        add(jButtonCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 270, 100, -1));
 
         jButtonReservas.setBackground(new java.awt.Color(29, 29, 29));
         jButtonReservas.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jButtonReservas.setForeground(new java.awt.Color(255, 255, 255));
         jButtonReservas.setText("Reservar");
-        add(jButtonReservas, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 330, 100, 20));
 
         jButtonBackTologin.setBackground(new java.awt.Color(29, 29, 29));
         jButtonBackTologin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/flecha-izquierda.png"))); // NOI18N
-        add(jButtonBackTologin, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 560, 100, 60));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cliente.png"))); // NOI18N
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/edificio.png"))); // NOI18N
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, 130));
 
         jLabel2.setFont(new java.awt.Font("Roboto Thin", 3, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("El Descanso");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, -1, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo3.jpg"))); // NOI18N
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 640));
 
         jPanel1.setBackground(new java.awt.Color(29, 29, 29));
         jPanel1.setMaximumSize(new java.awt.Dimension(640, 640));
         jPanel1.setMinimumSize(new java.awt.Dimension(640, 640));
         jPanel1.setPreferredSize(new java.awt.Dimension(640, 640));
         jPanel1.setRequestFocusEnabled(false);
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButtonInformes.setBackground(new java.awt.Color(29, 29, 29));
+        jButtonInformes.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jButtonInformes.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonInformes.setText("Informes");
+        jButtonInformes.setOpaque(true);
+        jButtonInformes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonInformesActionPerformed(evt);
+            }
+        });
 
         labelUserWelcome.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         labelUserWelcome.setForeground(new java.awt.Color(255, 255, 255));
         labelUserWelcome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelUserWelcome.setText("Bienvenido al sistema del Hotel El Descanso");
-        jPanel1.add(labelUserWelcome, new org.netbeans.lib.awtextra.AbsoluteConstraints(-90, 10, 750, 50));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, -1, -1));
+        jButtonGestionarPerfiles.setBackground(new java.awt.Color(29, 29, 29));
+        jButtonGestionarPerfiles.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jButtonGestionarPerfiles.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonGestionarPerfiles.setText("Gestionar Perfiles");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(labelUserWelcome, javax.swing.GroupLayout.PREFERRED_SIZE, 562, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(72, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jButtonInformes, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonGestionarPerfiles, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(91, 91, 91))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(labelUserWelcome, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonInformes, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonGestionarPerfiles, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(535, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(62, 62, 62)
+                        .addComponent(jButtonCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addComponent(jButtonHabitacion))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addComponent(jButtonReservas, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addComponent(jButtonCheckOut, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addComponent(jButtonCheckIn, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addComponent(jButtonBackTologin, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(80, 80, 80)
+                        .addComponent(jLabel3))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(jLabel2))
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(130, 130, 130)
+                                .addComponent(jButtonCliente)
+                                .addGap(8, 8, 8)
+                                .addComponent(jButtonHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(10, 10, 10)
+                                .addComponent(jButtonReservas, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(10, 10, 10)
+                                .addComponent(jButtonCheckOut, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(10, 10, 10)
+                                .addComponent(jButtonCheckIn, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(190, 190, 190)
+                                .addComponent(jLabel3))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(150, 150, 150)
+                                .addComponent(jLabel2)))
+                        .addGap(150, 150, 150)
+                        .addComponent(jButtonBackTologin, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonInformesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInformesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonInformesActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -130,9 +220,9 @@ public class JpanelModulos extends javax.swing.JPanel {
     private javax.swing.JButton jButtonCheckIn;
     private javax.swing.JButton jButtonCheckOut;
     private javax.swing.JButton jButtonCliente;
+    private javax.swing.JButton jButtonGestionarPerfiles;
     private javax.swing.JButton jButtonHabitacion;
     private javax.swing.JButton jButtonInformes;
-    private javax.swing.JButton jButtonInformes1;
     private javax.swing.JButton jButtonReservas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

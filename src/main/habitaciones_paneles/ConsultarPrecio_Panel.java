@@ -42,7 +42,6 @@ public class ConsultarPrecio_Panel extends javax.swing.JPanel {
         setMaximumSize(new java.awt.Dimension(640, 640));
         setMinimumSize(new java.awt.Dimension(640, 640));
         setPreferredSize(new java.awt.Dimension(640, 640));
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButtonRealizarCambios.setBackground(new java.awt.Color(29, 29, 29));
         jButtonRealizarCambios.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
@@ -53,53 +52,100 @@ public class ConsultarPrecio_Panel extends javax.swing.JPanel {
                 jButtonRealizarCambiosActionPerformed(evt);
             }
         });
-        add(jButtonRealizarCambios, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 240, -1, 20));
 
         jLabelPrecioHabitacionesTitle.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabelPrecioHabitacionesTitle.setForeground(new java.awt.Color(255, 255, 255));
         jLabelPrecioHabitacionesTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelPrecioHabitacionesTitle.setText("Consultar precio de habitaciones");
-        add(jLabelPrecioHabitacionesTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 40));
-        add(jTextFieldPrecioNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, 160, -1));
 
         jLabelCambiarPrecioHabitacionesTItle.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabelCambiarPrecioHabitacionesTItle.setForeground(new java.awt.Color(255, 255, 255));
         jLabelCambiarPrecioHabitacionesTItle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelCambiarPrecioHabitacionesTItle.setText("Cambiar precio de las habitaciones");
-        add(jLabelCambiarPrecioHabitacionesTItle, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 40));
 
         jCoBoxTipoHabitacion.setBackground(new java.awt.Color(29, 29, 29));
         jCoBoxTipoHabitacion.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jCoBoxTipoHabitacion.setForeground(new java.awt.Color(255, 255, 255));
         jCoBoxTipoHabitacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(jCoBoxTipoHabitacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Ingresa el nuevo precio de la habitación.");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, -1, -1));
 
         jButtonConsultarPrecio.setBackground(new java.awt.Color(29, 29, 29));
         jButtonConsultarPrecio.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jButtonConsultarPrecio.setForeground(new java.awt.Color(255, 255, 255));
         jButtonConsultarPrecio.setText("Consultar");
-        add(jButtonConsultarPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, -1, -1));
 
         label_ConsultaPrecio.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         label_ConsultaPrecio.setForeground(new java.awt.Color(255, 255, 255));
-        add(label_ConsultaPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 590, 360));
 
         jButtonModificarPrecioHabitacion.setBackground(new java.awt.Color(29, 29, 29));
         jButtonModificarPrecioHabitacion.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jButtonModificarPrecioHabitacion.setForeground(new java.awt.Color(255, 255, 255));
         jButtonModificarPrecioHabitacion.setText("Modificar");
-        add(jButtonModificarPrecioHabitacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Tipo de habitacion:");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, -1, -1));
-        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 650, 20));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabelPrecioHabitacionesTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jLabelCambiarPrecioHabitacionesTItle, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(jLabel3))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addComponent(jCoBoxTipoHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonModificarPrecioHabitacion)
+                    .addComponent(jButtonConsultarPrecio)))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(jTextFieldPrecioNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(label_ConsultaPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 590, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(210, 210, 210)
+                        .addComponent(jButtonRealizarCambios))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(jLabel2))))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelPrecioHabitacionesTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelCambiarPrecioHabitacionesTItle, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(jLabel3)
+                .addGap(13, 13, 13)
+                .addComponent(jCoBoxTipoHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(19, 19, 19)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonModificarPrecioHabitacion)
+                    .addComponent(jButtonConsultarPrecio))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label_ConsultaPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextFieldPrecioNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButtonRealizarCambios, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+        );
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonRealizarCambiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRealizarCambiosActionPerformed

@@ -44,33 +44,25 @@ public class Panel_IdentificarCliente extends javax.swing.JPanel {
         setMaximumSize(new java.awt.Dimension(640, 640));
         setMinimumSize(new java.awt.Dimension(640, 640));
         setPreferredSize(new java.awt.Dimension(640, 640));
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 650, 20));
 
         jButtonConsultarEstado.setBackground(new java.awt.Color(29, 29, 29));
         jButtonConsultarEstado.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jButtonConsultarEstado.setForeground(new java.awt.Color(255, 255, 255));
         jButtonConsultarEstado.setText("Consultar");
-        add(jButtonConsultarEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 120, -1, -1));
 
         label_ConsultaDispo.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         label_ConsultaDispo.setForeground(new java.awt.Color(255, 255, 255));
         label_ConsultaDispo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         label_ConsultaDispo.setText("Buscar Cliente");
-        add(label_ConsultaDispo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 30));
 
         label_TipoCliente.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         label_TipoCliente.setForeground(new java.awt.Color(255, 255, 255));
-        add(label_TipoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 290, 30));
-        add(jTextFieldPrecioNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 210, -1));
 
         jLabelNombreCliente.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabelNombreCliente.setForeground(new java.awt.Color(255, 255, 255));
-        add(jLabelNombreCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 480, 40));
 
         jRadioButton1.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton1.setText("Habitual");
-        add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, -1, -1));
 
         jRadioButton2.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton2.setText("Esporadico");
@@ -79,31 +71,94 @@ public class Panel_IdentificarCliente extends javax.swing.JPanel {
                 jRadioButton2ActionPerformed(evt);
             }
         });
-        add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Ingresa la identificación del cliente:");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, -1));
 
         jLabelDescuentoParaCliente.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabelDescuentoParaCliente.setForeground(new java.awt.Color(255, 255, 255));
-        add(jLabelDescuentoParaCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 420, 560, 30));
 
         jLabel6.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("El cliente:");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("El cliente tiene un descuento de:");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Tipo de cliente");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, -1, -1));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(label_ConsultaDispo, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(jLabel4))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(jTextFieldPrecioNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(jButtonConsultarEstado))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(jLabel6))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(jLabelNombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(jLabel1))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(jRadioButton1))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(jRadioButton2))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(label_TipoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(jLabel7))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(jLabelDescuentoParaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(label_ConsultaDispo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(jLabel4)
+                .addGap(13, 13, 13)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextFieldPrecioNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonConsultarEstado))
+                .addGap(28, 28, 28)
+                .addComponent(jLabel6)
+                .addGap(13, 13, 13)
+                .addComponent(jLabelNombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jLabel1)
+                .addGap(13, 13, 13)
+                .addComponent(jRadioButton1)
+                .addGap(9, 9, 9)
+                .addComponent(jRadioButton2)
+                .addGap(9, 9, 9)
+                .addComponent(label_TipoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(jLabel7)
+                .addGap(13, 13, 13)
+                .addComponent(jLabelDescuentoParaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
     }// </editor-fold>//GEN-END:initComponents
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed

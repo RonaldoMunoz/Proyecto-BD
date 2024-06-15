@@ -40,13 +40,11 @@ public class Informes_Opciones extends javax.swing.JPanel {
         setMaximumSize(new java.awt.Dimension(810, 640));
         setMinimumSize(new java.awt.Dimension(810, 640));
         setPreferredSize(new java.awt.Dimension(810, 640));
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButtonBack.setBackground(new java.awt.Color(29, 29, 29));
         jButtonBack.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jButtonBack.setForeground(new java.awt.Color(255, 255, 255));
         jButtonBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/flecha-izquierda.png"))); // NOI18N
-        add(jButtonBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 540, 120, 50));
 
         jButtonInfoGeneral.setBackground(new java.awt.Color(29, 29, 29));
         jButtonInfoGeneral.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
@@ -57,7 +55,6 @@ public class Informes_Opciones extends javax.swing.JPanel {
                 jButtonInfoGeneralActionPerformed(evt);
             }
         });
-        add(jButtonInfoGeneral, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 200, -1));
 
         jButtonConsolidado.setBackground(new java.awt.Color(29, 29, 29));
         jButtonConsolidado.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
@@ -68,7 +65,6 @@ public class Informes_Opciones extends javax.swing.JPanel {
                 jButtonConsolidadoActionPerformed(evt);
             }
         });
-        add(jButtonConsolidado, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 200, -1));
 
         jButtonVentas_x_mes.setBackground(new java.awt.Color(29, 29, 29));
         jButtonVentas_x_mes.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
@@ -79,23 +75,18 @@ public class Informes_Opciones extends javax.swing.JPanel {
                 jButtonVentas_x_mesActionPerformed(evt);
             }
         });
-        add(jButtonVentas_x_mes, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 180, -1));
 
         jLabel6.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Informes");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Roboto Thin", 3, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("El Descanso");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/edificio.png"))); // NOI18N
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, 130));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo3.jpg"))); // NOI18N
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 640));
 
         jPanel1.setBackground(new java.awt.Color(29, 29, 29));
 
@@ -110,7 +101,62 @@ public class Informes_Opciones extends javax.swing.JPanel {
             .addGap(0, 640, Short.MAX_VALUE)
         );
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, -1, 640));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(jButtonBack, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jButtonConsolidado, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addComponent(jLabel6))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jButtonVentas_x_mes, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jButtonInfoGeneral, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(jLabel1))
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(jLabel2)))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(540, 540, 540)
+                .addComponent(jButtonBack, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(300, 300, 300)
+                .addComponent(jButtonConsolidado))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(210, 210, 210)
+                .addComponent(jLabel6))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(260, 260, 260)
+                .addComponent(jButtonVentas_x_mes))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(340, 340, 340)
+                .addComponent(jButtonInfoGeneral))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(150, 150, 150)
+                .addComponent(jLabel2))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonVentas_x_mesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVentas_x_mesActionPerformed

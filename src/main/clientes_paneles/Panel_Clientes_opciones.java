@@ -39,13 +39,11 @@ public class Panel_Clientes_opciones extends javax.swing.JPanel {
         setMaximumSize(new java.awt.Dimension(810, 640));
         setMinimumSize(new java.awt.Dimension(810, 640));
         setPreferredSize(new java.awt.Dimension(810, 640));
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButtonBack.setBackground(new java.awt.Color(29, 29, 29));
         jButtonBack.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jButtonBack.setForeground(new java.awt.Color(255, 255, 255));
         jButtonBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/flecha-izquierda.png"))); // NOI18N
-        add(jButtonBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 540, 120, 50));
 
         jButtonDescuentoClientes.setBackground(new java.awt.Color(29, 29, 29));
         jButtonDescuentoClientes.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
@@ -56,7 +54,6 @@ public class Panel_Clientes_opciones extends javax.swing.JPanel {
                 jButtonDescuentoClientesActionPerformed(evt);
             }
         });
-        add(jButtonDescuentoClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 180, -1));
 
         jButtonIdentificarClientes.setBackground(new java.awt.Color(29, 29, 29));
         jButtonIdentificarClientes.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N
@@ -67,29 +64,23 @@ public class Panel_Clientes_opciones extends javax.swing.JPanel {
                 jButtonIdentificarClientesActionPerformed(evt);
             }
         });
-        add(jButtonIdentificarClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 180, -1));
 
         jButtonGeneralTotalCliente.setBackground(new java.awt.Color(29, 29, 29));
         jButtonGeneralTotalCliente.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jButtonGeneralTotalCliente.setForeground(new java.awt.Color(255, 255, 255));
         jButtonGeneralTotalCliente.setText("Generar Total a Pagar");
-        add(jButtonGeneralTotalCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 180, -1));
 
         jLabel6.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Clientes");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Roboto Thin", 3, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("El Descanso");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/edificio.png"))); // NOI18N
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, 130));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo3.jpg"))); // NOI18N
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 640));
 
         jPanel1.setBackground(new java.awt.Color(29, 29, 29));
         jPanel1.setMaximumSize(new java.awt.Dimension(640, 640));
@@ -107,7 +98,58 @@ public class Panel_Clientes_opciones extends javax.swing.JPanel {
             .addGap(0, 640, Short.MAX_VALUE)
         );
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, -1, -1));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(jLabel2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addComponent(jLabel6))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jButtonDescuentoClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jButtonGeneralTotalCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(jButtonBack, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jButtonIdentificarClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(jLabel2)
+                .addGap(31, 31, 31)
+                .addComponent(jLabel6)
+                .addGap(68, 68, 68)
+                .addComponent(jButtonDescuentoClientes)
+                .addGap(16, 16, 16)
+                .addComponent(jButtonGeneralTotalCliente))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(540, 540, 540)
+                .addComponent(jButtonBack, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(260, 260, 260)
+                .addComponent(jButtonIdentificarClientes))
+            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonDescuentoClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDescuentoClientesActionPerformed

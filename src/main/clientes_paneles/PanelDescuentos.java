@@ -41,45 +41,81 @@ public class PanelDescuentos extends javax.swing.JPanel {
         setMaximumSize(new java.awt.Dimension(640, 640));
         setMinimumSize(new java.awt.Dimension(640, 640));
         setPreferredSize(new java.awt.Dimension(640, 640));
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 650, 20));
 
         label_ConsultaDispo.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         label_ConsultaDispo.setForeground(new java.awt.Color(255, 255, 255));
         label_ConsultaDispo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         label_ConsultaDispo.setText("Descuentos para los clientes habituales");
-        add(label_ConsultaDispo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 640, 30));
 
         jLabel4.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Indica el nuevo valor");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, 140, 20));
-        add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 650, 20));
-        add(jTextNewDescuento, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 260, 140, -1));
 
         jButtonAceptarNewDescuento.setBackground(new java.awt.Color(29, 29, 29));
         jButtonAceptarNewDescuento.setForeground(new java.awt.Color(255, 255, 255));
         jButtonAceptarNewDescuento.setText("Aceptar");
-        add(jButtonAceptarNewDescuento, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 260, -1, -1));
-        add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 650, 20));
 
         jLabelDescuento.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabelDescuento.setForeground(new java.awt.Color(255, 255, 255));
         jLabelDescuento.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        add(jLabelDescuento, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 620, 40));
 
         jLabel6.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("El valor de descuento ofrecido para los clientes habituales es de:");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 640, 30));
 
         jLabel5.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Modificar el valor de descuento ofrecido a los clientes habituales:");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 600, -1));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(label_ConsultaDispo, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(jLabelDescuento, javax.swing.GroupLayout.PREFERRED_SIZE, 620, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(120, 120, 120)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(jTextNewDescuento, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(jButtonAceptarNewDescuento))
+            .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(label_ConsultaDispo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(jLabelDescuento, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jLabel5)
+                .addGap(33, 33, 33)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextNewDescuento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonAceptarNewDescuento))
+                .addGap(27, 27, 27)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
     }// </editor-fold>//GEN-END:initComponents
 
 

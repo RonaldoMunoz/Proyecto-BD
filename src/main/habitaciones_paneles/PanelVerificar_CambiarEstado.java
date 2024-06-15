@@ -42,46 +42,36 @@ public class PanelVerificar_CambiarEstado extends javax.swing.JPanel {
         setMaximumSize(new java.awt.Dimension(640, 640));
         setMinimumSize(new java.awt.Dimension(640, 640));
         setPreferredSize(new java.awt.Dimension(640, 640));
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 40, 650, 20));
 
         jLabel1.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Consultar Disponibilidad de Habitacion");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 40));
 
         jButtonConsultarEstado.setBackground(new java.awt.Color(29, 29, 29));
         jButtonConsultarEstado.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jButtonConsultarEstado.setForeground(new java.awt.Color(255, 255, 255));
         jButtonConsultarEstado.setText("Consultar");
-        add(jButtonConsultarEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, -1, -1));
 
         label_ConsultaDispo.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         label_ConsultaDispo.setForeground(new java.awt.Color(255, 255, 255));
         label_ConsultaDispo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         label_ConsultaDispo.setText("Cambiar Estado de la Habitación.");
-        add(label_ConsultaDispo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 40));
 
         label_ConsultaDispo1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         label_ConsultaDispo1.setForeground(new java.awt.Color(255, 255, 255));
-        add(label_ConsultaDispo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 290, 30));
-        add(jTextFieldPrecioNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 210, -1));
 
         jButtonCambiarEstado.setBackground(new java.awt.Color(29, 29, 29));
         jButtonCambiarEstado.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jButtonCambiarEstado.setForeground(new java.awt.Color(255, 255, 255));
         jButtonCambiarEstado.setText("Cambiar");
-        add(jButtonCambiarEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, -1, 20));
 
         jLabel3.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Ingresa el numero de la habitación: ");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, -1, -1));
 
         jRadioButton1.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton1.setText("Ocupado");
-        add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, -1, -1));
 
         jRadioButton2.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton2.setText("Reservado");
@@ -90,11 +80,67 @@ public class PanelVerificar_CambiarEstado extends javax.swing.JPanel {
                 jRadioButton2ActionPerformed(evt);
             }
         });
-        add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, -1, -1));
 
         jRadioButton3.setForeground(new java.awt.Color(255, 255, 255));
         jRadioButton3.setText("Disponible");
-        add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, -1, -1));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_ConsultaDispo, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(jLabel3))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(jTextFieldPrecioNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(jButtonConsultarEstado))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jRadioButton1))
+                    .addComponent(label_ConsultaDispo1, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addComponent(jRadioButton2))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addComponent(jRadioButton3)
+                .addGap(51, 51, 51)
+                .addComponent(jButtonCambiarEstado))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_ConsultaDispo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60)
+                .addComponent(jLabel3)
+                .addGap(23, 23, 23)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextFieldPrecioNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonConsultarEstado))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jRadioButton1)
+                    .addComponent(label_ConsultaDispo1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jRadioButton2)
+                .addGap(9, 9, 9)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jRadioButton3)
+                    .addComponent(jButtonCambiarEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
     }// </editor-fold>//GEN-END:initComponents
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
