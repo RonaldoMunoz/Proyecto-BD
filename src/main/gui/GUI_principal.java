@@ -121,7 +121,7 @@ public class GUI_principal extends javax.swing.JFrame {
         
         @Override
         public void paint(Graphics g){
-            imagen = new  ImageIcon(getClass().getResource("fondo1.jpg")).getImage();
+            imagen = new  ImageIcon(getClass().getResource("/imagenes/bg.jpeg")).getImage();
             
             g.drawImage(imagen,0,0,getWidth(),getHeight(),this);
             setOpaque(false);
