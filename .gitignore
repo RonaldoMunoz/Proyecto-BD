@@ -2,6 +2,7 @@ src/main/db/App.java
 
 # Compiled class file
 *.class
+*.form
 
 # Log file
 *.log
