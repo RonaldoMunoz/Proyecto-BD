@@ -1,21 +1,18 @@
 package gui;
 
-import gui.GUI_principal.FondoPanel;
+
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
+
 
 /**
  *
  * @author usuario
  */
-public class PanelLogin extends javax.swing.JPanel {
+public class PanelLogin extends javax.swing.JPanel implements CambiarPanel{
    
     /**
      * Creates new form Jpanel_inicio
@@ -39,7 +36,7 @@ public class PanelLogin extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jPanel1 = new FondoPanel2();
+        jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jPasswordField1 = new javax.swing.JPasswordField();
@@ -162,15 +159,16 @@ public class PanelLogin extends javax.swing.JPanel {
             .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
-    }// </editor-fold>//GEN-END:initComponents
+    }
 
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
+    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {
+        
+    }
 
-    private void jButtonEntrarLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEntrarLoginActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonEntrarLoginActionPerformed
+    private void jButtonEntrarLoginActionPerformed(java.awt.event.ActionEvent evt) {
+       cambiarPanel(GUI_principal.modulosPanel,GUI_principal.Bg);
+
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -185,21 +183,5 @@ public class PanelLogin extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JComboBox<String> perfilUser;
-    // End of variables declaration//GEN-END:variables
-        class FondoPanel2 extends JPanel 
-    {
-        private Image imagen;
-        
-        @Override
-        public void paint(Graphics g){
-            imagen = new  ImageIcon(getClass().getResource("fondo1.jpg")).getImage();
-            
-            g.drawImage(imagen,0,0,getWidth(),getHeight(),this);
-            setOpaque(false);
-            super.paint(g);
-            
-                    
-        }
-        
-    }
+
 }

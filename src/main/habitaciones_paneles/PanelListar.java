@@ -39,10 +39,10 @@ public class PanelListar extends javax.swing.JPanel {
         jLabel4.setText("jLabel4");
 
         setBackground(new java.awt.Color(29, 29, 29));
-        setMaximumSize(new java.awt.Dimension(640, 640));
-        setMinimumSize(new java.awt.Dimension(640, 640));
+        setMaximumSize(new java.awt.Dimension(540, 640));
+        setMinimumSize(new java.awt.Dimension(540, 640));
         setName(""); // NOI18N
-        setPreferredSize(new java.awt.Dimension(640, 640));
+        setPreferredSize(new java.awt.Dimension(540, 640));
 
         jCoBoxTipoHabitacion.setBackground(new java.awt.Color(29, 29, 29));
         jCoBoxTipoHabitacion.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
@@ -82,7 +82,7 @@ public class PanelListar extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(290, 290, 290)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(layout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addComponent(jLabel1))
@@ -94,7 +94,7 @@ public class PanelListar extends javax.swing.JPanel {
                 .addComponent(jButtonListarHabitaciones))
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 590, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
