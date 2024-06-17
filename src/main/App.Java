@@ -1,9 +1,10 @@
 import gui.GUI_principal;
 
-public class App {
+public class  App {
+    public static GUI_principal gui = new GUI_principal();
     
     public static void main(String[] args) {
-        GUI_principal gui = new GUI_principal();
+        App.gui.setLocationRelativeTo(null);
         gui.setVisible(true);
     }
 }

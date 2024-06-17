@@ -4,6 +4,8 @@
  */
 package habitaciones_paneles;
 
+import java.awt.event.ActionEvent;
+
 /**
  *
  * @author usuario
@@ -57,6 +59,11 @@ public class PanelListarServicios extends javax.swing.JPanel {
         jButtonListarHabitaciones.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jButtonListarHabitaciones.setForeground(new java.awt.Color(255, 255, 255));
         jButtonListarHabitaciones.setText("Listar Servicios");
+        jButtonListarHabitaciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonListarHabitacionesActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -95,15 +102,26 @@ public class PanelListarServicios extends javax.swing.JPanel {
                 .addGap(13, 13, 13)
                 .addComponent(label_Listar, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-    }// </editor-fold>//GEN-END:initComponents
+    }
 
+    private void jButtonListarHabitacionesActionPerformed(ActionEvent evt){
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+        
+    }
+
+    private <T> void listarHabitaciones(T texto) {
+
+        label_Listar.setText(texto.toString());
+    }
+
+    // Variables declaration 
+
     private javax.swing.JButton jButtonListarHabitaciones;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel label_Listar;
-    // End of variables declaration//GEN-END:variables
+    
+    //
 }
