@@ -70,4 +70,33 @@ abstract public class Clientes {
 
         return false;
     }
+    public static String totalPagar(int idCliente, String tipo_hab, int num_dias){
+        String mensajeFail = "Verifique que el tipo de habitación coincida con las habitaciones que tiene reservado el cliente";
+        String mensajeExitoso = "";
+        String sql = """
+                select (h.precio * ?) as total_pagar
+                from habitaciones h inner join reservas r 
+                on h.num_reserva = r.num_reserva
+                inner join clientes c
+                on c.id = r.cliente
+                where (h.tipo = ? and r.cliente = ?)
+                """;
+        try (
+            Connection conn = ConexionDB.obtenerConexion();
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            ){
+                stmt.setInt(1, num_dias);
+                stmt.setString(2, tipo_hab);
+                stmt.setInt(3, idCliente);
+                try (ResultSet rs = stmt.executeQuery()) {
+                    if (rs.next()){
+                        int valor = rs.getInt("total_pagar");
+                        return mensajeExitoso += "El costo total sería de $" + valor;
+                    }
+                }      
+            }catch (SQLException e) {
+                e.printStackTrace();
+            }
+        return mensajeFail;
+    }
 }
