@@ -1,4 +1,4 @@
-package main.db;
+package db;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -81,22 +81,25 @@ abstract public class Clientes {
                 on c.id = r.cliente
                 where (h.tipo = ? and r.cliente = ?)
                 """;
+                
         try (
             Connection conn = ConexionDB.obtenerConexion();
             PreparedStatement stmt = conn.prepareStatement(sql);
             ){
-                stmt.setInt(1, num_dias);
-                stmt.setString(2, tipo_hab);
-                stmt.setInt(3, idCliente);
-                try (ResultSet rs = stmt.executeQuery()) {
-                    if (rs.next()){
-                        int valor = rs.getInt("total_pagar");
-                        return mensajeExitoso += "El costo total sería de $" + valor;
-                    }
-                }      
-            }catch (SQLException e) {
-                e.printStackTrace();
-            }
+            stmt.setInt(1, num_dias);
+            stmt.setString(2, tipo_hab);
+            stmt.setInt(3, idCliente);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()){
+                    int valor = rs.getInt("total_pagar");
+                    return mensajeExitoso += "El costo total sería de $" + valor;
+                }
+            }      
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }
+
         return mensajeFail;
     }
 }
