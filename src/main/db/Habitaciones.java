@@ -93,8 +93,36 @@ abstract public class Habitaciones {
                 e.printStackTrace();
             }
         }
-
         return false;
+    }
 
+    public static String consultarEstado(int num_habitacion){
+        String sql = "select estado from habitaciones where num_habitacion = ?";
+        String estado = "";
+        try {
+            Connection conn = ConexionDB.obtenerConexion();
+            stmt = conn.prepareStatement(sql);
+            stmt.setInt(1, num_habitacion);
+            ResultSet rs = stmt.executeQuery();
+
+            if(rs.next()) {
+                String estado_hab = rs.getString("estado");
+                
+                    
+                estado += estado_hab;
+                }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            try {
+                if (rs != null && stmt != null) {
+                    stmt.close();
+                    rs.close();
+                }
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        return estado;
     }
 }
