@@ -40,7 +40,7 @@ public class JpanelModulos extends javax.swing.JPanel implements CambiarPanel{
         jButtonCheckIn.setBackground(new java.awt.Color(29, 29, 29));
         jButtonCheckIn.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jButtonCheckIn.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonCheckIn.setText("Check-In");
+        jButtonCheckIn.setText("Asignar Habitacion");
         jButtonCheckIn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonCheckInActionPerformed(evt);
@@ -246,12 +246,12 @@ public class JpanelModulos extends javax.swing.JPanel implements CambiarPanel{
 
 
     private void jButtonCheckInActionPerformed(java.awt.event.ActionEvent evt) {
-        cambiarPanel(GUI_principal.panelCheckIn,jPanel1);
+        cambiarPanelInt(GUI_principal.panelCheckIn,jPanel1);
         
     }
 
     private void jButtonCheckOutActionPerformed(java.awt.event.ActionEvent evt) {
-        cambiarPanel(GUI_principal.panelCheckOut,jPanel1);
+        cambiarPanelInt(GUI_principal.panelCheckOut,jPanel1);
         
     }
 

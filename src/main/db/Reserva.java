@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 abstract public class Reserva {
+
     public static boolean cancelarReserva(int numReserva) {
         String sql = "UPDATE RESERVAS SET ESTADO = 'Cancelada' WHERE NUM_RESERVA = ?";
 
@@ -21,4 +22,5 @@ abstract public class Reserva {
 
         return false;
     }
+    
 }

@@ -36,6 +36,5 @@ public interface CambiarPanel {
             panelContenedor.revalidate();
             panelContenedor.repaint();
         }
-
         
 }

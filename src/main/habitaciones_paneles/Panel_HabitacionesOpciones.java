@@ -1,11 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
+
 package habitaciones_paneles;
 
 import java.awt.event.ActionEvent;
-
 import gui.GUI_principal;
 import gui.CambiarPanel;
 
@@ -20,9 +16,6 @@ public class Panel_HabitacionesOpciones extends javax.swing.JPanel implements Ca
         initComponents();
     }
 
-
-    @SuppressWarnings("unchecked")
- 
     private void initComponents() {
 
         jButtonServiciosDeHabitacion = new javax.swing.JButton();
@@ -255,7 +248,6 @@ public class Panel_HabitacionesOpciones extends javax.swing.JPanel implements Ca
     // Variables declaration 
     public static PanelListar panelListarHabitaciones = new PanelListar();
     private PanelListarServicios panelListarServicios = new PanelListarServicios();
-    private Panel_Check_In panelCheckIn = new Panel_Check_In();
     private ConsultarPrecio_Panel panelConsultarPrecio = new ConsultarPrecio_Panel();
     private PanelVerificar_CambiarEstado panelVerificarDispo = new PanelVerificar_CambiarEstado();
     private javax.swing.JButton jButtonBack;
