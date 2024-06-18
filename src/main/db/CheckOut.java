@@ -11,21 +11,22 @@ import java.sql.Time;
 public class CheckOut {
     public static String generarFactura(int idCliente, int numHabitacion, Time horaSalida,  Date fechaSalida) {
     String inf_factura = "";
-        String sql = "SELECT * FROM facturas " +
-                     "WHERE cod_factura IN ( " +
-                     "   SELECT cod_factura " +
-                     "   FROM checkout " +
-                     "   WHERE (hora_salida = ? AND fecha_salida = ?) AND reserva IN ( " +
-                     "       SELECT num_reserva " +
-                     "       FROM reservas " +
-                     "       WHERE cliente = ? AND num_reserva IN ( " +
-                     "           SELECT num_reserva " +
-                     "           FROM habitaciones " +
-                     "           WHERE num_habitacion = ? " +
-                     "       ) " +
-                     "   ) " +
-                     ")";
-
+    String sql = """
+        SELECT * FROM facturas
+        WHERE cod_factura IN ( 
+            SELECT cod_factura 
+            FROM checkout 
+            WHERE (hora_salida = ? AND fecha_salida = ?) AND reserva IN ( 
+                SELECT num_reserva 
+                FROM reservas 
+                WHERE cliente = ? AND num_reserva IN ( 
+                    SELECT num_reserva 
+                    FROM habitaciones 
+                    WHERE num_habitacion = ? 
+                )  
+            ) 
+        )
+        """;
         try (
             Connection conn = ConexionDB.obtenerConexion();
             PreparedStatement stmt = conn.prepareStatement(sql);

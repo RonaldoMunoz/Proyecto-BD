@@ -117,7 +117,15 @@ abstract public class Habitaciones {
     }
     //Primer función de CheckIn
     public static String listarHab_Reservadas(int idCliente){
-        String sql ="select num_habitacion, tipo from habitaciones where num_reserva in(select num_reserva from reservas where cliente = ? )";    
+        String sql = """
+                select num_habitacion, tipo 
+                from habitaciones 
+                where num_reserva in(
+                    select num_reserva 
+                    from reservas 
+                    where cliente = ? 
+                    )
+                """;;    
         String hab_reservadas = "";
         try {
             Connection conn = ConexionDB.obtenerConexion();
@@ -139,5 +147,29 @@ abstract public class Habitaciones {
         return hab_reservadas;
 
 
+    }
+    //Segunda función de CheckIn
+    public static Boolean cambiarReserxOcupado(int num_habitacion, int idCliente){
+        String sql = """
+            update habitaciones 
+                set estado = 'ocupada'
+                where (estado = 'reservada' and num_habitacion = ?) and num_reserva in (
+	                select num_reserva
+	                from reservas
+	                where cliente = ?
+                    )
+                """;
+        try (
+            Connection conn = ConexionDB.obtenerConexion();
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            ){
+                stmt.setInt(1, num_habitacion);
+                stmt.setInt(2, idCliente);
+                    
+                if (stmt.executeUpdate() > 0) return true;
+            } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+        return false;
     }
 }
