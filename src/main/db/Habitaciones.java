@@ -115,4 +115,29 @@ abstract public class Habitaciones {
         } 
         return false;
     }
+    //Primer función de CheckIn
+    public static String listarHab_Reservadas(int idCliente){
+        String sql ="select num_habitacion, tipo from habitaciones where num_reserva in(select num_reserva from reservas where cliente = ? )";    
+        String hab_reservadas = "";
+        try {
+            Connection conn = ConexionDB.obtenerConexion();
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setInt(1, idCliente);
+            ResultSet rs = stmt.executeQuery();
+
+
+            while(rs.next()) {
+                int num_hab = rs.getInt("num_habitacion");
+                String tipo = rs.getString("tipo");
+                
+                    
+                hab_reservadas += "El cliente tiene reservada la habitación #" + num_hab + " tipo " + tipo + "\n";
+                }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        } 
+        return hab_reservadas;
+
+
+    }
 }
