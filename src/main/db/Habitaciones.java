@@ -125,4 +125,26 @@ abstract public class Habitaciones {
         }
         return estado;
     }
+    public static Boolean modificarEstado(int num_habitacion, String estado){
+        String sql = "update habitaciones set estado = ? where num_habitacion = ?";
+
+        try {
+            Connection conn = ConexionDB.obtenerConexion();
+            stmt = conn.prepareStatement(sql);
+            stmt.setString(1, estado);
+            stmt.setInt(2, num_habitacion);
+            
+            
+            if (stmt.executeUpdate() > 0) return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (stmt != null) stmt.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return false;
+    }
 }
