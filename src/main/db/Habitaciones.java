@@ -1,4 +1,4 @@
-package db;
+package main.db;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -83,9 +83,10 @@ abstract public class Habitaciones {
         String estado = "";
         try {
             Connection conn = ConexionDB.obtenerConexion();
-            stmt = conn.prepareStatement(sql);
+            PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setInt(1, num_habitacion);
             ResultSet rs = stmt.executeQuery();
+
 
             if(rs.next()) {
                 String estado_hab = rs.getString("estado");
@@ -95,16 +96,23 @@ abstract public class Habitaciones {
                 }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
-        } finally {
-            try {
-                if (rs != null && stmt != null) {
-                    stmt.close();
-                    rs.close();
-                }
-            } catch (SQLException ex) {
-                System.out.println(ex.getMessage());
-            }
-        }
+        } 
         return estado;
+    }
+    public static Boolean modificarEstado(int num_habitacion, String estado){
+        String sql = "update habitaciones set estado = ? where num_habitacion = ?";
+
+        try {
+            Connection conn = ConexionDB.obtenerConexion();
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setString(1, estado);
+            stmt.setInt(2, num_habitacion);
+            
+            
+            if (stmt.executeUpdate() > 0) return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } 
+        return false;
     }
 }
