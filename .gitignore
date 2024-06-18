@@ -3,6 +3,7 @@ src/main/db/App.java
 # Compiled class file
 *.class
 
+
 # Log file
 *.log
 
