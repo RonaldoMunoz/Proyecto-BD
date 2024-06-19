@@ -1,4 +1,4 @@
-package main.db;
+package db;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -81,40 +81,46 @@ abstract public class Habitaciones {
     public static String consultarEstado(int num_habitacion){
         String sql = "select estado from habitaciones where num_habitacion = ?";
         String estado = "";
-        try {
+
+        try (
             Connection conn = ConexionDB.obtenerConexion();
             PreparedStatement stmt = conn.prepareStatement(sql);
+        ) {
             stmt.setInt(1, num_habitacion);
-            ResultSet rs = stmt.executeQuery();
 
-
-            if(rs.next()) {
-                String estado_hab = rs.getString("estado");
-                
-                    
-                estado += estado_hab;
+            try (ResultSet rs = stmt.executeQuery();) {
+                if(rs.next()) {
+                    String estado_hab = rs.getString("estado");
+                           
+                    estado += estado_hab;
                 }
+            }
+            
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         } 
+
         return estado;
     }
+
     public static Boolean modificarEstado(int num_habitacion, String estado){
         String sql = "update habitaciones set estado = ? where num_habitacion = ?";
 
-        try {
+        try (
             Connection conn = ConexionDB.obtenerConexion();
             PreparedStatement stmt = conn.prepareStatement(sql);
+        ) {
             stmt.setString(1, estado);
             stmt.setInt(2, num_habitacion);
-            
             
             if (stmt.executeUpdate() > 0) return true;
         } catch (SQLException e) {
             e.printStackTrace();
         } 
+
         return false;
     }
+
     //Primer función de CheckIn
     public static String listarHab_Reservadas(int idCliente){
         String sql = """
@@ -125,29 +131,30 @@ abstract public class Habitaciones {
                     from reservas 
                     where cliente = ? 
                     )
-                """;;    
+                """;   
         String hab_reservadas = "";
-        try {
+
+        try (
             Connection conn = ConexionDB.obtenerConexion();
             PreparedStatement stmt = conn.prepareStatement(sql);
+        ) {
             stmt.setInt(1, idCliente);
-            ResultSet rs = stmt.executeQuery();
-
-
-            while(rs.next()) {
-                int num_hab = rs.getInt("num_habitacion");
-                String tipo = rs.getString("tipo");
-                
+            
+            try (ResultSet rs = stmt.executeQuery();) {
+                while(rs.next()) {
+                    int num_hab = rs.getInt("num_habitacion");
+                    String tipo = rs.getString("tipo");
                     
-                hab_reservadas += "El cliente tiene reservada la habitación #" + num_hab + " tipo " + tipo + "\n";
+                    hab_reservadas += "El cliente tiene reservada la habitación #" + num_hab + " tipo " + tipo + "\n";
                 }
+            }
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         } 
+
         return hab_reservadas;
-
-
     }
+
     //Segunda función de CheckIn
     public static Boolean cambiarReserxOcupado(int num_habitacion, int idCliente){
         String sql = """
@@ -159,6 +166,7 @@ abstract public class Habitaciones {
 	                where cliente = ?
                     )
                 """;
+
         try (
             Connection conn = ConexionDB.obtenerConexion();
             PreparedStatement stmt = conn.prepareStatement(sql);
@@ -169,7 +177,8 @@ abstract public class Habitaciones {
                 if (stmt.executeUpdate() > 0) return true;
             } catch (SQLException e) {
                     e.printStackTrace();
-                }
+            }
+
         return false;
     }
 }

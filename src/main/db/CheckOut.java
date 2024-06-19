@@ -1,11 +1,10 @@
-package main.db;
+package db;
 
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-//import java.sql.Date;
 import java.sql.Time;
 
 public class CheckOut {
@@ -27,6 +26,7 @@ public class CheckOut {
             ) 
         )
         """;
+
         try (
             Connection conn = ConexionDB.obtenerConexion();
             PreparedStatement stmt = conn.prepareStatement(sql);
@@ -45,11 +45,9 @@ public class CheckOut {
                     inf_factura += "Tu código de factura es: " + cod_factura + "\n" + 
                                    "Tendrás que pagar un total de " + total + " por tu estadía de: " + num_dias + " días\n";
                 }
-            } catch (SQLException e) {
-                System.out.println(e.getMessage());
             }
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
 
         return inf_factura;

@@ -1,4 +1,4 @@
-package main.db;
+package db;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,18 +9,21 @@ public class Servicios {
     public static String listarServicios(){
         String sql = "select distinct tipo from servicios";
         String servicios = "";
-        try {
+
+        try (
             Connection conn = ConexionDB.obtenerConexion();
             PreparedStatement stmt = conn.prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
+        ) {
 
-            while(rs.next()) {
-                String tipo = rs.getString("tipo");
-                servicios += tipo + "\n";
-                }
+        while(rs.next()) {
+            String tipo = rs.getString("tipo");
+            servicios += tipo + "\n";
+        }
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         } 
+        
         return servicios;
     }
 }
