@@ -37,7 +37,7 @@ abstract public class Reservas {
             
             stmt.setInt(1, idCliente);
             
-            try (ResultSet rs = stmt.executeQuery();) {
+            try (ResultSet rs = stmt.executeQuery()) {
                 while (rs.next()){
                     String nombre = rs.getString("nombre");
                     String apellido = rs.getString("apellido");
