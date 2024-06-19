@@ -4,11 +4,15 @@
  */
 package reserva_paneles;
 
+import gui.GUI_principal;
+
+import gui.CambiarPanel;
+
 /**
  *
  * @author maico
  */
-public class Panel_ReservaOpciones extends javax.swing.JPanel {
+public class Panel_ReservaOpciones extends javax.swing.JPanel implements CambiarPanel{
 
     /**
      * Creates new form Panel_ReservaOpciones
@@ -46,6 +50,15 @@ public class Panel_ReservaOpciones extends javax.swing.JPanel {
         jButtonAtrasReserva.setForeground(new java.awt.Color(255, 255, 255));
         jButtonAtrasReserva.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/atras.png"))); // NOI18N
         jButtonAtrasReserva.setToolTipText("");
+        jButtonAtrasReserva.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAtrasReservaActionPerformed(evt);
+            }
+
+            private void jButtonAtrasReservaActionPerformed(java.awt.event.ActionEvent evt) {
+               cambiarPanel(GUI_principal.modulosPanel,GUI_principal.Bg);
+            }
+        });        
 
         jLabelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/edificio.png"))); // NOI18N
 
