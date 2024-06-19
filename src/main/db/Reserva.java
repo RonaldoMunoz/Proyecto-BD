@@ -53,5 +53,4 @@ abstract public class Reserva {
     public static Boolean hacerReserva(int idCliente, String nombre, String apellido, String correo, String telefono, int num_hab, Date fecha_entrada, int num_dias){
         return false; 
     }
-}   //hacer reserva
 }

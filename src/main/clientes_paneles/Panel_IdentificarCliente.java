@@ -4,6 +4,7 @@ package clientes_paneles;
 import java.awt.event.ActionEvent;
 
 import javax.swing.ButtonGroup;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -49,7 +50,8 @@ public class Panel_IdentificarCliente extends javax.swing.JPanel {
             }
 
             private void jButtonConsultarEstadoActionPerformed(ActionEvent evt) {
-                
+                obtenerIdClient();
+                reemplazarTexto("ronadol","Habitual", "0");         
             }
         });
 
@@ -166,14 +168,44 @@ public class Panel_IdentificarCliente extends javax.swing.JPanel {
 
 
 private String obtenerIdClient(){
-    
     if(jTextFieldIdCliente.getText().isEmpty()){
-        return null;
+        jRadioButton1.setSelected(false);
+        jRadioButton2.setSelected(false);
+        jRadioButton1.setEnabled(false);
+        jRadioButton2.setEnabled(false);
+        JOptionPane.showMessageDialog(null, "Debe digitar el id del cliente", "Error", JOptionPane.ERROR_MESSAGE);
+        throw new IllegalArgumentException("Debe digitar el id del cliente");
     }
     else return jTextFieldIdCliente.getText();
     
 }
 
+private void reemplazarTexto(String nombre, String tipo, String descuento){
+    if (nombre.isEmpty()){
+        jRadioButton1.setSelected(false);
+        jRadioButton2.setSelected(false);
+        jRadioButton1.setEnabled(false);
+        jRadioButton2.setEnabled(false);
+        JOptionPane.showMessageDialog(null, "El cliente no existe en la BD", "Error", JOptionPane.ERROR_MESSAGE);
+        
+    
+    }
+    jLabelNombreCliente.setText(nombre);
+    if (tipo.equals("Habitual")){
+        jRadioButton1.setEnabled(true);
+        jRadioButton1.setSelected(true);
+    }
+    else if (tipo.equals("Esporadico")){
+        jRadioButton2.setEnabled(true);
+        jRadioButton2.setSelected(true);
+    }
+    else {
+        jRadioButton1.setEnabled(false);
+        jRadioButton2.setEnabled(false);
+    }
+
+    jLabelDescuentoParaCliente.setText(descuento);    
+}
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonConsultarEstado;
     private javax.swing.JLabel jLabel1;
