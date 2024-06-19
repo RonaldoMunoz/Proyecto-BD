@@ -8,11 +8,12 @@ import gui.GUI_principal;
 
 import gui.CambiarPanel;
 
+
 /**
  *
  * @author maico
  */
-public class Panel_ReservaOpciones extends javax.swing.JPanel implements CambiarPanel{
+public class Panel_ReservaOpciones extends javax.swing.JPanel implements CambiarPanel {
 
     /**
      * Creates new form Panel_ReservaOpciones
@@ -179,16 +180,16 @@ public class Panel_ReservaOpciones extends javax.swing.JPanel implements Cambiar
         getAccessibleContext().setAccessibleName("");
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonConsultarReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConsultarReservaActionPerformed
-        // TODO add your handling code here:
+    private void jButtonConsultarReservaActionPerformed(java.awt.event.ActionEvent evt) {
+        cambiarPanelInt(Panel_ConsultarReserva , panel_Interno_Options);
     }//GEN-LAST:event_jButtonConsultarReservaActionPerformed
 
-    private void jButtonCancelarReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarReservaActionPerformed
-        // TODO add your handling code here:
+    private void jButtonCancelarReservaActionPerformed(java.awt.event.ActionEvent evt) {
+        cambiarPanelInt(Panel_CancelarReserva , panel_Interno_Options);
     }//GEN-LAST:event_jButtonCancelarReservaActionPerformed
 
-    private void jButtonHacerReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHacerReservaActionPerformed
-        // TODO add your handling code here:
+    private void jButtonHacerReservaActionPerformed(java.awt.event.ActionEvent evt) {
+        cambiarPanelInt(Panel_HacerReserva , panel_Interno_Options);
     }//GEN-LAST:event_jButtonHacerReservaActionPerformed
 
 
@@ -203,5 +204,8 @@ public class Panel_ReservaOpciones extends javax.swing.JPanel implements Cambiar
     private javax.swing.JLabel jLabelNameHotel;
     private javax.swing.JLabel jLabelReserva;
     private javax.swing.JPanel panel_Interno_Options;
+    private Panel_ConsultarReserva Panel_ConsultarReserva = new Panel_ConsultarReserva();
+    private Panel_CancelarReserva Panel_CancelarReserva = new Panel_CancelarReserva();
+    private Panel_HacerReserva Panel_HacerReserva = new Panel_HacerReserva();
     // End of variables declaration//GEN-END:variables
 }
