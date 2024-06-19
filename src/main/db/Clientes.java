@@ -71,12 +71,12 @@ abstract public class Clientes {
         return false;
     }
     public static String totalPagar(int idCliente, String tipo_hab, int num_dias){
-        String mensajeFail = "Verifique que el tipo de habitación coincida con las habitaciones que tiene reservado el cliente";
+        String mensajeFail = "Verifique que el tipo de habitación coincida con las habitaciones que tiene reservada el cliente";
         String mensajeExitoso = "";
         String sql = """
                 select (h.precio * ?) as total_pagar
                 from habitaciones h inner join reservas r 
-                on h.num_reserva = r.num_reserva
+                on h.num_habitacion = r.habitacion
                 inner join clientes c
                 on c.id = r.cliente
                 where (h.tipo = ? and r.cliente = ?)
