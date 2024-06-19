@@ -4,6 +4,8 @@
  */
 package reserva_paneles;
 
+import db.Reserva;
+
 /**
  *
  * @author maico
@@ -107,9 +109,29 @@ public class Panel_ConsultarReserva extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldIDActionPerformed
 
-    private void jButtonMostrarReservarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMostrarReservarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonMostrarReservarActionPerformed
+private void jButtonMostrarReservarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMostrarReservarActionPerformed
+    // Simulación de consulta de reserva
+    String idReserva = jTextFieldID.getText(); // Obtener la identificación de la reserva
+    if (!idReserva.isEmpty()) {
+        // Realizar aquí la lógica de consulta de la reserva
+        // Supongamos que la reserva se encuentra en una lista de reservas llamada 'listaReservas'
+        boolean reservaEncontrada = false;
+        for (Reserva reserva : "lista de las reservas que chito no tiene") {
+            if (reserva.getId().equals(idReserva)) {
+                // Mostrar la información de la reserva
+                System.out.println("Reserva encontrada:");
+                System.out.println(reserva);
+                reservaEncontrada = true;
+                break;
+            }
+        }
+        if (!reservaEncontrada) {
+            System.out.println("La reserva con ID " + idReserva + " no se encuentra.");
+        }
+    } else {
+        System.out.println("Error: Debes ingresar la identificación de la reserva.");
+    }
+}//GEN-LAST:event_jButtonMostrarReservarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
