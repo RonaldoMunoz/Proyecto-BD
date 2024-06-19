@@ -79,7 +79,7 @@ abstract public class Habitaciones {
     }
 
     public static String consultarEstado(int num_habitacion){
-        String sql = "select estado from habitaciones where num_habitacion = ?";
+        String sql = "select estado from reservas where habitacion = ? ";
         String estado = "";
 
         try (
@@ -104,7 +104,7 @@ abstract public class Habitaciones {
     }
 
     public static Boolean modificarEstado(int num_habitacion, String estado){
-        String sql = "update habitaciones set estado = ? where num_habitacion = ?";
+        String sql = "update reservas set estado = ? where habitacion = ?";
 
         try (
             Connection conn = ConexionDB.obtenerConexion();
@@ -124,13 +124,10 @@ abstract public class Habitaciones {
     //Primer función de CheckIn
     public static String listarHab_Reservadas(int idCliente){
         String sql = """
-                select num_habitacion, tipo 
-                from habitaciones 
-                where num_reserva in(
-                    select num_reserva 
-                    from reservas 
-                    where cliente = ? 
-                    )
+                select r.habitacion, h.tipo
+                from habitaciones h inner join reservas r
+                on h.num_habitacion = r.habitacion 
+                where r.cliente = ?
                 """;   
         String hab_reservadas = "";
 
@@ -142,7 +139,7 @@ abstract public class Habitaciones {
             
             try (ResultSet rs = stmt.executeQuery();) {
                 while(rs.next()) {
-                    int num_hab = rs.getInt("num_habitacion");
+                    int num_hab = rs.getInt("habitacion");
                     String tipo = rs.getString("tipo");
                     
                     hab_reservadas += "El cliente tiene reservada la habitación #" + num_hab + " tipo " + tipo + "\n";
@@ -158,13 +155,9 @@ abstract public class Habitaciones {
     //Segunda función de CheckIn
     public static Boolean cambiarReserxOcupado(int num_habitacion, int idCliente){
         String sql = """
-            update habitaciones 
-                set estado = 'ocupada'
-                where (estado = 'reservada' and num_habitacion = ?) and num_reserva in (
-	                select num_reserva
-	                from reservas
-	                where cliente = ?
-                    )
+            update reservas 
+            set estado = 'Ocupada'
+            where estado = 'Reservada' and habitacion = ? and cliente = ?
                 """;
 
         try (
