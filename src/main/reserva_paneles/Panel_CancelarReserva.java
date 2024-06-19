@@ -104,12 +104,20 @@ public class Panel_CancelarReserva extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextFieldIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldIDActionPerformed
+      
+    }
 
     private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
-        // TODO add your handling code here:
+        
+        String idReserva = jTextFieldID.getText(); // Obtener la identificación de la reserva
+        if (!idReserva.isEmpty()) {
+            // Realizar aquí la lógica de cancelación de la reserva
+            System.out.println("Cancelando reserva con ID: " + idReserva);
+        } else {
+            System.out.println("Error: Debes ingresar la identificación de la reserva.");
+        }
     }//GEN-LAST:event_jButtonCancelarActionPerformed
+    
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
