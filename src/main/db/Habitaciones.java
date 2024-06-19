@@ -38,7 +38,7 @@ abstract public class Habitaciones {
                 }
             }
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
 
         return informacion_hab;
@@ -63,7 +63,7 @@ abstract public class Habitaciones {
                 }
             }
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
 
         return tipo_precio;
