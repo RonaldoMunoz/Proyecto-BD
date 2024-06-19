@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.sql.Date;
 
 abstract public class Reserva {
-
     public static boolean cancelarReserva(int numReserva) {
         String sql = "UPDATE RESERVAS SET ESTADO = 'Cancelada' WHERE NUM_RESERVA = ?";
         
@@ -55,4 +54,4 @@ abstract public class Reserva {
         return false; 
     }
 }   //hacer reserva
-    
+}
