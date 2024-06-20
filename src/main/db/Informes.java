@@ -52,4 +52,48 @@ public class Informes {
 
         return porcentajeOcupacion;
     }
+    public static double calcularPorcentajeCancelacion(int anio, int mes) {
+        double porcentajeCancelacion = 0;
+        String sql = "SELECT calcular_porcentaje_cancelacion(?, ?);";
+
+        try (
+            Connection conn = ConexionDB.obtenerConexion();
+            PreparedStatement stmt = conn.prepareStatement(sql);
+        ) {
+            stmt.setInt(1, anio);
+            stmt.setInt(2, mes);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    porcentajeCancelacion = rs.getDouble(1);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return porcentajeCancelacion;
+    }
+    public static String tipoServicioMasRepetido(int anio, int mes) {
+        String tipoMasRepetido = "";
+        String sql = "SELECT tipo_servicio_mas_repetido(?, ?);";
+
+        try (
+            Connection conn = ConexionDB.obtenerConexion();
+            PreparedStatement stmt = conn.prepareStatement(sql);
+        ) {
+            stmt.setInt(1, anio);
+            stmt.setInt(2, mes);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    tipoMasRepetido = rs.getString(1);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return tipoMasRepetido;
+    }
 }
