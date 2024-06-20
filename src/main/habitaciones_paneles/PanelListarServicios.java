@@ -24,21 +24,19 @@ public class PanelListarServicios extends javax.swing.JPanel {
 
     private void initComponents() {
 
-        label_Listar = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jButtonListarHabitaciones = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
 
         setBackground(new java.awt.Color(29, 29, 29));
         setMaximumSize(new java.awt.Dimension(640, 640));
         setMinimumSize(new java.awt.Dimension(640, 640));
         setPreferredSize(new java.awt.Dimension(640, 640));
         setRequestFocusEnabled(false);
-
-        label_Listar.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        label_Listar.setForeground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -55,12 +53,13 @@ public class PanelListarServicios extends javax.swing.JPanel {
         jButtonListarHabitaciones.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jButtonListarHabitaciones.setForeground(new java.awt.Color(255, 255, 255));
         jButtonListarHabitaciones.setText("Listar Servicios");
-        jButtonListarHabitaciones.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonListarHabitacionesActionPerformed(evt);
-            }
-        });
 
+        jTextArea1.setBackground(new java.awt.Color(29, 29, 29));
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        jTextArea1.setForeground(new java.awt.Color(255, 255, 255));
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -77,8 +76,8 @@ public class PanelListarServicios extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(label_Listar, javax.swing.GroupLayout.PREFERRED_SIZE, 504, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 568, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -95,27 +94,27 @@ public class PanelListarServicios extends javax.swing.JPanel {
                 .addComponent(jButtonListarHabitaciones)
                 .addGap(38, 38, 38)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(label_Listar, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
     }
 
     private void jButtonListarHabitacionesActionPerformed(ActionEvent evt){
-        label_Listar.setText(Servicios.listarServicios());
+        jTextArea1.setText(Servicios.listarServicios());
     }
     
 
 
 
     // Variables declaration 
-
     private javax.swing.JButton jButtonListarHabitaciones;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JLabel label_Listar;
+    private javax.swing.JTextArea jTextArea1;
     
     //
 }
