@@ -8,8 +8,8 @@ import java.sql.Date;
 import java.time.LocalDate;
 
 abstract public class Reservas {
-    private static boolean crearReserva(int idCliente, int numHab, Date fechaEntrada, int numDias) {
-        String sql = "INSERT INTO RESERVAS (FECHA_ENTRADA, NUM_DIAS, ESTADO, HABITACION, CLIENTE) VALUES (?, ?, 'Reservada', ?, ?)";
+    private static boolean crearReserva(int idCliente, int numHab, Date fechaEntrada, int numDias, String estado) {
+        String sql = "INSERT INTO RESERVAS (FECHA_ENTRADA, NUM_DIAS, ESTADO, HABITACION, CLIENTE) VALUES (?, ?, ?, ?, ?)";
 
         try (
             Connection conn = ConexionDB.obtenerConexion();
@@ -17,8 +17,9 @@ abstract public class Reservas {
         ) {
             stmt.setDate(1, fechaEntrada);
             stmt.setInt(2, numDias);
-            stmt.setInt(3, numHab);
-            stmt.setInt(4, idCliente);
+            stmt.setString(3, estado);
+            stmt.setInt(4, numHab);
+            stmt.setInt(5, idCliente);
 
             if (stmt.executeUpdate() > 0) return true; 
         } catch (SQLException e) {
@@ -75,6 +76,26 @@ abstract public class Reservas {
         return mensaje; 
     }
 
+    private static Boolean verificarReserva(int idCliente, Date fechaEntrada) {
+        String sql = "SELECT NUM_RESERVA FROM RESERVAS WHERE CLIENTE = ? AND FECHA_ENTRADA = ?";
+
+        try (
+            Connection conn = ConexionDB.obtenerConexion();
+            PreparedStatement stmt = conn.prepareStatement(sql);
+        ) {
+            stmt.setInt(1, idCliente);
+            stmt.setDate(2, fechaEntrada);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) return true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return false;
+    }
+
     private static boolean verificarDisponible(int numHab, Date fecha) {
         String sql ="""
                 SELECT H.NUM_HABITACION FROM HABITACIONES H
@@ -111,14 +132,35 @@ abstract public class Reservas {
 
         if (verificarDisponible(numHab, fechaEntrada) && verificarDisponible(numHab, fechaSalida)) {
             if (Clientes.existeCliente(idCliente)) {
-                if (!crearReserva(idCliente, numHab, fechaEntrada, numDias)) return "Ocurrio un error al crear la reserva";
+                if (!crearReserva(idCliente, numHab, fechaEntrada, numDias, "Reservada")) return "Ocurrio un error al crear la reserva";
 
                 return "Se ha realizado la reserva correctamente";
             } else {
                 if (!Clientes.crearCliente(idCliente, nombre, apellido, correo, telefono)) return "Ocurrio un error al registrar el cliente";
-                if (!crearReserva(idCliente, numHab, fechaEntrada, numDias)) return "Ocurrio un error al crear la reserva";
+                if (!crearReserva(idCliente, numHab, fechaEntrada, numDias, "Reservada")) return "Ocurrio un error al crear la reserva";
 
                 return "Se ha realizado la reserva correctamente";
+            }
+        } else return "La habitacion " + numHab + " no esta disponible para el " + fechaEntrada;
+    }
+
+    public static String asignarHabitacion(int idCliente, String nombre, String apellido, String correo, String telefono, int numHab, Date fechaEntrada, int numDias) {
+
+        if (verificarReserva(idCliente, fechaEntrada)) return "El cliente ya tiene reserva en la habitación " + numHab + " para el " + fechaEntrada;
+        
+        LocalDate fechaEntr = fechaEntrada.toLocalDate();
+        Date fechaSalida = Date.valueOf(fechaEntr.plusDays(numDias));
+
+        if (verificarDisponible(numHab, fechaEntrada) && verificarDisponible(numHab, fechaSalida)) {
+            if (Clientes.existeCliente(idCliente)) {
+                if (!crearReserva(idCliente, numHab, fechaEntrada, numDias, "Ocupada")) return "Ocurrio un error al asignar la habitación";
+
+                return "Se ha asignado correctamente la habitación " + numHab;
+            } else {
+                if (!Clientes.crearCliente(idCliente, nombre, apellido, correo, telefono)) return "Ocurrio un error al registrar el cliente";
+                if (!crearReserva(idCliente, numHab, fechaEntrada, numDias, "Ocupada")) return "Ocurrio un error al asignar la habitación";
+
+                return "Se ha asignado correctamente la habitación " + numHab;
             }
         } else return "La habitacion " + numHab + " no esta disponible para el " + fechaEntrada;
     }

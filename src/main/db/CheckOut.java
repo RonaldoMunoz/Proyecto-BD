@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.sql.Time;
 
 public class CheckOut {
-    public static String Total_Factura(){
+    public static String totalFactura(){
         String inf_factura = "";
         String sql = """
                 SELECT f.cod_factura, 
@@ -36,7 +36,7 @@ public class CheckOut {
         
                 return inf_factura;
     }
-    public static String GenerarFactura(int idCliente, int num_hab, Time hora, Date fecha){
+    public static String generarFactura(int idCliente, int num_hab, Time hora, Date fecha){
         String factura = "";
         String sql = "SELECT * FROM generar_factura(?, ?, ?, ?);";
             try (
@@ -64,7 +64,7 @@ public class CheckOut {
             } catch (SQLException e) {
                 System.out.println(e.getMessage());
             }
-            String primera_parte = Total_Factura();
+            String primera_parte = totalFactura();
             return primera_parte + factura;
     }
 }    
