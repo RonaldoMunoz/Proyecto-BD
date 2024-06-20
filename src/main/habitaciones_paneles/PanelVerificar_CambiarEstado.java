@@ -177,11 +177,11 @@ public class PanelVerificar_CambiarEstado extends javax.swing.JPanel {
     }
 
     public void verificarDispo() {
-            jLabel1.setVisible(true);
-            jButtonConsultarEstado.setVisible(true);
-            jButtonCambiarEstado.setVisible(false);
-            label_ConsultaDispo.setVisible(false);
-            this.repaint();
+        jLabel1.setVisible(true);
+        jButtonConsultarEstado.setVisible(true);
+        jButtonCambiarEstado.setVisible(false);
+        label_ConsultaDispo.setVisible(false);
+        this.repaint();
     }
 
     public void cambiarEstado(){
