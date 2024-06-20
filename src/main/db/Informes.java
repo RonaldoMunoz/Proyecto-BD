@@ -30,4 +30,26 @@ public class Informes {
 
         return informe;
     }
+    public static double calcularPorcentajeOcupacion(int anio, int mes) {
+        double porcentajeOcupacion = 0;
+        String sql = "SELECT calcular_porcentaje_ocupacion(?, ?);";
+
+        try (
+            Connection conn = ConexionDB.obtenerConexion();
+            PreparedStatement stmt = conn.prepareStatement(sql);
+        ) {
+            stmt.setInt(1, anio);
+            stmt.setInt(2, mes);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    porcentajeOcupacion = rs.getDouble(1);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return porcentajeOcupacion;
+    }
 }
