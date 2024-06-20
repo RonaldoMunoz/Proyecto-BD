@@ -1,5 +1,9 @@
 package habitaciones_paneles;
 
+import javax.swing.JOptionPane;
+
+import db.Habitaciones;
+
 public class Panel_Check_In extends javax.swing.JPanel {
 
     public Panel_Check_In() {
@@ -145,12 +149,12 @@ public class Panel_Check_In extends javax.swing.JPanel {
         );
     }
 
-    private String obtenerID(){
-        return jTextFied_idCliente.getText();
+    private Integer obtenerID(){
+        return Integer.parseInt(jTextFied_idCliente.getText());
     }
 
-    private String obtenerHabitacion(){
-        return jTextFieldHabitacionAsignar.getText();
+    private Integer obtenerHabitacion(){
+        return Integer.parseInt(jTextFieldHabitacionAsignar.getText());
     }
 
     private void limpiarCampos(){
@@ -159,10 +163,23 @@ public class Panel_Check_In extends javax.swing.JPanel {
     }
 
     private void jButtonAceptarActionPerformed(java.awt.event.ActionEvent evt) {
+        String habitaciones = Habitaciones.listarHab_Reservadas(obtenerID());
+        if(habitaciones.equals("")){
+            JOptionPane.showMessageDialog(null, "No se encontraron habitaciones reservadas por el cliente");
+        }
+        else {
+            jTextAreaListarReservas.setText(habitaciones);
+        }
     }
 
     private void jButtonAsignarActionPerformed(java.awt.event.ActionEvent  evt) {
-        
+        boolean asignado = Habitaciones.cambiarReserxOcupado(obtenerHabitacion(), obtenerID());
+        if(asignado){
+            JOptionPane.showMessageDialog(null, "Habitacion reservada correctamente");
+        }
+        else {
+            JOptionPane.showMessageDialog(null, "Error al reservar la habitacion");
+        }
     }
 
     

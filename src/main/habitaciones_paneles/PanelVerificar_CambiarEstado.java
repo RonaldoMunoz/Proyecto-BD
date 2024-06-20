@@ -4,6 +4,8 @@ import java.awt.event.ActionEvent;
 import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
 
+import db.Habitaciones;
+
 
 public class PanelVerificar_CambiarEstado extends javax.swing.JPanel {
 
@@ -143,23 +145,21 @@ public class PanelVerificar_CambiarEstado extends javax.swing.JPanel {
 
     //                     ACTION LISTENERS
 
-    private String jButtonCambiarEstadoActionPerformed (ActionEvent evt){
-        if (jRadioButton1.isSelected()) {
-            return jRadioButton1.getText();
-        } else if (jRadioButton2.isSelected()) {
-            return jRadioButton2.getText();
-        } else if (jRadioButton3.isSelected()) {
-            return  jRadioButton3.getText();
+    private void jButtonCambiarEstadoActionPerformed (ActionEvent evt){
+        
+        Boolean flag = Habitaciones.modificarEstado(obtenerNumHabitacion(), obtenerEstadoSeleccionado());
+        if (flag) {
+            JOptionPane.showMessageDialog(this, "Estado Cambiado Exitosamente", "Exito", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, "Error al Cambiar Estado", "Error", JOptionPane.ERROR_MESSAGE);
         }
-        else  {
-            JOptionPane.showMessageDialog(this,"Seleccione Una Opcion Valida", "Error", JOptionPane.ERROR_MESSAGE);
-            throw new IllegalArgumentException("Seleccione Una Opcion Valida");
-        }
-
     }
 
     private void jButtonConsultarEstadoActionPerformed(ActionEvent evt) {
 
+        String consulta = Habitaciones.consultarEstado(obtenerNumHabitacion());
+        setEstado(consulta);
+        
     }
 
 
@@ -193,8 +193,8 @@ public class PanelVerificar_CambiarEstado extends javax.swing.JPanel {
         this.repaint();
     }
 
-    public String obtenerNumHabitacion(){
-        return jTextFieldPrecioNuevo.getText();
+    public Integer obtenerNumHabitacion(){
+        return Integer.parseInt(jTextFieldPrecioNuevo.getText());
     }
 
     public void setEstado(String estado){

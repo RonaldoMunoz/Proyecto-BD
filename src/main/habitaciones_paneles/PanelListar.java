@@ -109,6 +109,11 @@ public class PanelListar extends javax.swing.JPanel {
         jButtonListarHabitaciones1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jButtonListarHabitaciones1.setForeground(new java.awt.Color(255, 255, 255));
         jButtonListarHabitaciones1.setText("Listar");
+        jButtonListarHabitaciones1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonListarHabitacionesActionPerformed(evt);
+            }
+        }); 
 
         jTextHabitacionesDisponible1.setBackground(new java.awt.Color(29, 29, 29));
         jTextHabitacionesDisponible1.setColumns(20);
@@ -234,7 +239,7 @@ public class PanelListar extends javax.swing.JPanel {
     }
 
     private void jButtonListarHabitacionesActionPerformed(ActionEvent evt) {
-       setHabitacionesDisponibles(Habitaciones.mostrarHabitacion(getTipoHabitacion(), Date.valueOf(getFechaInicio()), Date.valueOf(getFechaSalida())));
+        setHabitacionesDisponibles(Habitaciones.mostrarHabitacion(getTipoHabitacion(), Date.valueOf(getFechaInicio()), Date.valueOf(getFechaSalida())));
     }
 
     private String getTipoHabitacion() {
