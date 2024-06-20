@@ -156,7 +156,6 @@ public class PanelVerificar_CambiarEstado extends javax.swing.JPanel {
     }
 
     private void jButtonConsultarEstadoActionPerformed(ActionEvent evt) {
-
         String consulta = Habitaciones.consultarEstado(obtenerNumHabitacion());
         setEstado(consulta);
         
