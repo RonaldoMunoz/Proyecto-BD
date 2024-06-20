@@ -40,7 +40,7 @@ public class PanelListarServicios extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("En el hotel Budapest Contamos con los siguientes servicios:");
+        jLabel1.setText("En el hotel El Descanso Contamos con los siguientes servicios:");
 
         jLabel2.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -53,6 +53,11 @@ public class PanelListarServicios extends javax.swing.JPanel {
         jButtonListarHabitaciones.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jButtonListarHabitaciones.setForeground(new java.awt.Color(255, 255, 255));
         jButtonListarHabitaciones.setText("Listar Servicios");
+        jButtonListarHabitaciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonListarHabitacionesActionPerformed(evt);
+            }
+        });
 
         jTextArea1.setBackground(new java.awt.Color(29, 29, 29));
         jTextArea1.setColumns(20);
