@@ -49,8 +49,9 @@ public class CheckOut {
                 stmt.setDate(4, fecha);
     
                 try (ResultSet rs = stmt.executeQuery()) {
+                    int acum = 0;
+
                     while(rs.next()) {
-                        int cod_factura = rs.getInt("cod_facturaa");
                         double precio = rs.getDouble("precioo");
                         String tipo = rs.getString("tipoo");
                         Date fecha_Ser = rs.getDate("fechaa");
@@ -58,7 +59,7 @@ public class CheckOut {
                         int cliente = rs.getInt("cliente_ID");
 
                         
-                        factura += "La factura con código: " + cod_factura + " tiene los siguientes servicios: \n" + tipo + "|" + precio + "|" + fecha_Ser + "|" + hora_Ser + "|" + cliente + "\n";
+                        factura += "\nServicio " + (acum+=1) + ":\n" + tipo + "|" + precio + "|" + fecha_Ser + "|" + hora_Ser + "|" + cliente + "\n";
                     }
                 }
             } catch (SQLException e) {
