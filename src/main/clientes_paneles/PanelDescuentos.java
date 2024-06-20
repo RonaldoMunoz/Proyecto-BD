@@ -6,6 +6,8 @@ package clientes_paneles;
 
 import java.awt.event.ActionEvent;
 
+import db.Clientes;
+
 /**
  *
  * @author usuario
@@ -17,6 +19,7 @@ public class PanelDescuentos extends javax.swing.JPanel {
      */
     public PanelDescuentos() {
         initComponents();
+        jLabelDescuento.setText(Double.toString(Clientes.mostrarDescuento() * 100) + "%");
     }
 
     /**
@@ -126,10 +129,13 @@ public class PanelDescuentos extends javax.swing.JPanel {
     }
 
     private void jButtonAceptarNewDescuentoActionPerformed(ActionEvent evt) {
-        
+        double newDescuento = Double.parseDouble(obtenerDescuento());
+
+        Clientes.modificarDescuento(newDescuento);
+        actualizarDescuento(Double.toString(newDescuento * 100) + "%");
     }
 
-    private String getjTextNewDescuento() {
+    private String obtenerDescuento() {
         return jTextNewDescuento.getText();
     }
 
