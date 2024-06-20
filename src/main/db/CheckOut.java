@@ -59,7 +59,7 @@ public class CheckOut {
                         int cliente = rs.getInt("cliente_ID");
 
                         
-                        factura += "\nServicio " + (acum+=1) + ":\n" + tipo + "|" + precio + "|" + fecha_Ser + "|" + hora_Ser + "|" + cliente + "\n";
+                        factura += "\nServicio " + (acum+=1) + ":\n" + tipo + " | " + precio + " | " + fecha_Ser + " | " + hora_Ser + " | " + cliente + "\n";
                     }
                 }
             } catch (SQLException e) {
