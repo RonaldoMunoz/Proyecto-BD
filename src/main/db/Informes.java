@@ -96,4 +96,30 @@ public class Informes {
 
         return tipoMasRepetido;
     }
+    public static String obtenerConsolidadoServicios(int anio, int mes) {
+        StringBuilder tiposServicios = new StringBuilder();
+        String sql = "SELECT DISTINCT tipo FROM servicios WHERE EXTRACT(YEAR FROM fecha) = ? AND EXTRACT(MONTH FROM fecha) = ?;";
+
+        try (
+            Connection conn = ConexionDB.obtenerConexion();
+            PreparedStatement stmt = conn.prepareStatement(sql);
+        ) {
+            stmt.setInt(1, anio);
+            stmt.setInt(2, mes);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    String tipo = rs.getString("tipo");
+                    if (tiposServicios.length() > 0) {
+                        tiposServicios.append(", ");
+                    }
+                    tiposServicios.append(tipo);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return tiposServicios.toString();
+    }
 }
