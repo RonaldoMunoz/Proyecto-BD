@@ -18,12 +18,13 @@ public class Panel_Consolidado extends javax.swing.JPanel {
 
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        label_Consolidado = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         label_ConsultaDispo = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jButtonCalcularVentaxMes = new javax.swing.JButton();
         jTextFieldFecha = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextGenerarConsolidado = new javax.swing.JTextArea();
 
         setBackground(new java.awt.Color(29, 29, 29));
         setMaximumSize(new java.awt.Dimension(640, 640));
@@ -33,20 +34,15 @@ public class Panel_Consolidado extends javax.swing.JPanel {
 
         jLabel4.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Consolidado de servicios en la fecha indicada");
+        jLabel4.setText("Consolidado de servicios en la fecha indicada:");
         add(jLabel4);
         jLabel4.setBounds(50, 190, 290, 20);
 
         jLabel3.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Generar consolidado de los servicios vendidos en la fecha indicada");
+        jLabel3.setText("Generar consolidado de los servicios vendidos en el mes:");
         add(jLabel3);
         jLabel3.setBounds(50, 100, 347, 17);
-
-        label_Consolidado.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        label_Consolidado.setForeground(new java.awt.Color(255, 255, 255));
-        add(label_Consolidado);
-        label_Consolidado.setBounds(50, 220, 550, 350);
         add(jSeparator1);
         jSeparator1.setBounds(0, 40, 650, 20);
 
@@ -78,6 +74,16 @@ public class Panel_Consolidado extends javax.swing.JPanel {
         jTextFieldFecha.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         add(jTextFieldFecha);
         jTextFieldFecha.setBounds(250, 150, 120, 20);
+
+        jTextGenerarConsolidado.setBackground(new java.awt.Color(29, 29, 29));
+        jTextGenerarConsolidado.setColumns(20);
+        jTextGenerarConsolidado.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        jTextGenerarConsolidado.setForeground(new java.awt.Color(255, 255, 255));
+        jTextGenerarConsolidado.setRows(5);
+        jScrollPane2.setViewportView(jTextGenerarConsolidado);
+
+        add(jScrollPane2);
+        jScrollPane2.setBounds(60, 230, 430, 290);
     }
 
     private void jButtonCalcularVentaxMes(java.awt.event.ActionEvent evt) {
@@ -100,7 +106,7 @@ public class Panel_Consolidado extends javax.swing.JPanel {
     }
 
     private void setConsolidado(String consolidado) {
-        label_Consolidado.setText(consolidado);
+        jTextGenerarConsolidado.setText(consolidado);
     }
 
     // Variables declaration 
@@ -108,9 +114,10 @@ public class Panel_Consolidado extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField jTextFieldFecha;
-    private javax.swing.JLabel label_Consolidado;
+    private javax.swing.JTextArea jTextGenerarConsolidado;
     private javax.swing.JLabel label_ConsultaDispo;
     // End of variables declaration
 }
