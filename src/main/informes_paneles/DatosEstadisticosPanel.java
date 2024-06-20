@@ -6,6 +6,8 @@ package informes_paneles;
 
 import java.awt.event.ActionEvent;
 
+import db.Informes;
+
 /**
  *
  * @author usuario
@@ -152,7 +154,12 @@ public class DatosEstadisticosPanel extends javax.swing.JPanel {
 
 
     private void jButtonCalcularVentaxMesActionPerformed(ActionEvent evt) {
-        
+        int anio = Integer.parseInt(obtenerAnio());
+        int mes = Integer.parseInt(obtenerMes());
+
+        setPorcentajeOcupacion(Double.toString(Informes.calcularPorcentajeOcupacion(anio, mes)));
+        setServicioMasSolicitado(Informes.tipoServicioMasRepetido(anio, mes));
+        setPorcentajeOcupacion(Double.toString(Informes.calcularPorcentajeCancelacion(anio, mes)));
     }
 
     private String obtenerAnio(){
