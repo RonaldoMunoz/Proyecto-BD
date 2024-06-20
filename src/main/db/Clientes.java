@@ -119,7 +119,6 @@ abstract public class Clientes {
     }
     public static String totalPagar(int idCliente, String tipo_hab, int num_dias){
         String mensajeFail = "Verifique que el tipo de habitación coincida con las habitaciones que tiene reservada el cliente";
-        String mensajeExitoso = "";
         String sql = """
                 select (h.precio * ?) as total_pagar
                 from habitaciones h inner join reservas r 
@@ -139,8 +138,8 @@ abstract public class Clientes {
 
             try (ResultSet rs = stmt.executeQuery()) {
                 if (rs.next()){
-                    int valor = rs.getInt("total_pagar");
-                    return mensajeExitoso += "El costo total sería de $" + valor;
+                    String valor = rs.getString("total_pagar");
+                    return valor;
                 }
             }      
         } catch (SQLException e) {

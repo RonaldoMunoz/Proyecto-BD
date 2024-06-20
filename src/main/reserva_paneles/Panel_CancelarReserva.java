@@ -4,6 +4,10 @@
  */
 package reserva_paneles;
 
+import javax.swing.JOptionPane;
+
+import db.Reservas;
+
 /**
  *
  * @author maico
@@ -49,12 +53,6 @@ public class Panel_CancelarReserva extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Numero de reserva");
-
-        jTextFieldID.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldIDActionPerformed(evt);
-            }
-        });
 
         jButtonCancelar.setBackground(new java.awt.Color(29, 29, 29));
         jButtonCancelar.setForeground(new java.awt.Color(255, 255, 255));
@@ -103,22 +101,20 @@ public class Panel_CancelarReserva extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextFieldIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIDActionPerformed
-      
-    }
+    private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed // Obtener la identificación de la reserva
+        if (!getNumReserva().isEmpty()) {
+            int numReserva = Integer.parseInt(getNumReserva());
 
-    private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
-        
-        String idReserva = jTextFieldID.getText(); // Obtener la identificación de la reserva
-        if (!idReserva.isEmpty()) {
-            // Realizar aquí la lógica de cancelación de la reserva
-            System.out.println("Cancelando reserva con ID: " + idReserva);
+            if (Reservas.cancelarReserva(numReserva)) JOptionPane.showMessageDialog(null, "La reserva se cancelo correctamente");
+            else JOptionPane.showMessageDialog(null, "La reserva no se cancelo correctamente");
         } else {
-            System.out.println("Error: Debes ingresar la identificación de la reserva.");
+            JOptionPane.showMessageDialog(null, "Debes ingresar un numero de reserva correcto");
         }
     }//GEN-LAST:event_jButtonCancelarActionPerformed
     
-
+    private String getNumReserva() {
+        return jTextFieldID.getText();
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCancelar;

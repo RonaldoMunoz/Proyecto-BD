@@ -5,6 +5,11 @@
 package reserva_paneles;
 
 import java.awt.event.ActionEvent;
+import java.sql.Date;
+
+import javax.swing.JOptionPane;
+
+import db.Reservas;
 
 /**
  *
@@ -216,8 +221,48 @@ public class Panel_HacerReserva extends javax.swing.JPanel {
     }
 
     private void jButtonReservarActionPerformed(ActionEvent evt) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'jButtonReservarActionPerformed'");
+        int idCliente = Integer.parseInt(getId());
+        String nombre = getNombre();
+        String apellido = getApellido();
+        String correo = getCorreo();
+        String telefono = getTelefono();
+        int numHab = Integer.parseInt(getNumHab());
+        Date fechaEntrada = Date.valueOf(getFecha());
+        int numDias = Integer.parseInt(getNumDias());
+
+        JOptionPane.showMessageDialog(null, Reservas.hacerReserva(idCliente, nombre, apellido, correo, telefono, numHab, fechaEntrada, numDias));
+    }
+
+    private String getNombre() {
+        return jTextNombre.getText();
+    }
+
+    private String getApellido() {
+        return jTextFieldAPELLIDO.getText();
+    }
+
+    private String getId() {
+        return jTextFieldID.getText();
+    }
+
+    private String getCorreo() {
+        return jTextFieldCORREO.getText();
+    }
+
+    private String getTelefono() {
+        return jTextFieldTELEFONO.getText();
+    }
+
+    private String getNumHab() {
+        return jTextFieldHABITACION.getText();
+    }
+
+    private String getFecha() {
+        return jTextField13ENTRADA.getText();
+    }
+
+    private String getNumDias() {
+        return jTextFieldDIAS.getText();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
