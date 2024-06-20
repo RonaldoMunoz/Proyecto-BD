@@ -3,6 +3,12 @@ package clientes_paneles;
 
 import java.awt.event.ActionEvent;
 
+import javax.swing.JOptionPane;
+import java.sql.Date;
+import java.sql.Time;
+
+import db.Servicios;
+
 /**
  *
  * @author usuario
@@ -106,7 +112,14 @@ public class PanelServiciosSolicitados extends javax.swing.JPanel {
 
     
     private void jButtonReservarActionPerformed(ActionEvent evt) {
-        
+        String tipo = getTipoSer();
+        String fecha = getFechaSer();
+        String hora = getHoraSer();
+        double precio = Double.parseDouble(getPrecioSer());
+        int idCliente = Integer.parseInt(getIDCliente());
+
+        if (Servicios.crearServicio(tipo, Date.valueOf(fecha), Time.valueOf(hora), null, precio, idCliente)) JOptionPane.showMessageDialog(null, "El servicio se registro correctamente");
+        else JOptionPane.showMessageDialog(null, "El servicio no se registro correctamente");
     }
 
     public String getIDCliente() {
