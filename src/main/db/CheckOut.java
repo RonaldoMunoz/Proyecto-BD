@@ -8,48 +8,65 @@ import java.sql.SQLException;
 import java.sql.Time;
 
 public class CheckOut {
-    public static String generarFactura(int idCliente, int numHabitacion, Time horaSalida,  Date fechaSalida) {
-    String inf_factura = "";
-    String sql = """
-        SELECT * FROM facturas
-        WHERE cod_factura IN ( 
-            SELECT cod_factura 
-            FROM checkout 
-            WHERE (hora_salida = ? AND fecha_salida = ?) AND reserva IN ( 
-                SELECT num_reserva 
-                FROM reservas 
-                WHERE cliente = ? AND num_reserva IN ( 
-                    SELECT num_reserva 
-                    FROM habitaciones 
-                    WHERE num_habitacion = ?
-                )  
-            ) 
-        )
-        """;
-
+    public static String Total_Factura(){
+        String inf_factura = "";
+        String sql = """
+                SELECT f.cod_factura, 
+                (f.total + COALESCE(SUM(s.precio), 0)) AS total
+                FROM facturas f 
+                LEFT JOIN servicios s ON s.cod_factura = f.cod_factura
+                WHERE f.cod_factura = (SELECT MAX(cod_factura) FROM facturas)
+                GROUP BY f.cod_factura, f.total;
+                """;
         try (
             Connection conn = ConexionDB.obtenerConexion();
             PreparedStatement stmt = conn.prepareStatement(sql);
-        ) {
-            stmt.setTime(1, horaSalida);
-            stmt.setDate(2, fechaSalida);
-            stmt.setInt(3, idCliente);
-            stmt.setInt(4, numHabitacion);
-
-            try (ResultSet rs = stmt.executeQuery()) {
-                while(rs.next()) {
-                    int cod_factura = rs.getInt("cod_factura");
+            ) {
+                try (ResultSet rs = stmt.executeQuery()) {
+                    if(rs.next()) {
                     double total = rs.getDouble("total");
-                    int num_dias = rs.getInt("num_dias");
-
-                    inf_factura += "Tu código de factura es: " + cod_factura + "\n" + 
-                                   "Tendrás que pagar un total de " + total + " por tu estadía de: " + num_dias + " días\n";
+                    int cod_factura = rs.getInt("cod_factura");
+                                
+                    inf_factura = "Código de factura: " + cod_factura + "\nTotal: " + total + "\n-----------------------------------------";
+                        }
+                    }
+                } catch (SQLException e) {
+                    System.out.println(e.getMessage());
                 }
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        return inf_factura;
+        
+                return inf_factura;
     }
-}
+    public static String GenerarFactura(int idCliente, int num_hab, Time hora, Date fecha){
+        String factura = "";
+        String sql = "SELECT * FROM generar_factura(?, ?, ?, ?);";
+            try (
+                Connection conn = ConexionDB.obtenerConexion();
+                PreparedStatement stmt = conn.prepareStatement(sql);
+            ) {
+                stmt.setInt(1, idCliente);
+                stmt.setInt(2, num_hab);
+                stmt.setTime(3, hora);
+                stmt.setDate(4, fecha);
+    
+                try (ResultSet rs = stmt.executeQuery()) {
+                    while(rs.next()) {
+                        int cod_factura = rs.getInt("cod_facturaa");
+                        double precio = rs.getDouble("precioo");
+                        String tipo = rs.getString("tipoo");
+                        Date fecha_Ser = rs.getDate("fechaa");
+                        Time hora_Ser = rs.getTime("horaa");
+                        int cliente = rs.getInt("cliente_ID");
+
+                        
+                        factura += "La factura con código: " + cod_factura + " tiene los siguientes servicios: \n" + tipo + "|" + precio + "|" + fecha_Ser + "|" + hora_Ser + "|" + cliente + "\n";
+                    }
+                }
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
+            }
+            String primera_parte = Total_Factura();
+            return primera_parte + factura;
+    }
+}    
+                            
+
