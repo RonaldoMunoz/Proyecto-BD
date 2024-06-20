@@ -96,7 +96,7 @@ public class Panel_ConsultarReserva extends javax.swing.JPanel {
         
     }
 
-private void jButtonMostrarReservarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMostrarReservarActionPerformed
+    private void jButtonMostrarReservarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMostrarReservarActionPerformed
     /* 
     // Simulación de consulta de reserva
     String idReserva = jTextFieldID.getText(); // Obtener la identificación de la reserva
