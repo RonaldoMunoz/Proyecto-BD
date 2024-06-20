@@ -174,11 +174,12 @@ public class Panel_Check_In extends javax.swing.JPanel {
 
     private void jButtonAsignarActionPerformed(java.awt.event.ActionEvent  evt) {
         boolean asignado = Habitaciones.cambiarReserxOcupado(obtenerHabitacion(), obtenerID());
+        
         if(asignado){
-            JOptionPane.showMessageDialog(null, "Habitacion reservada correctamente");
+            JOptionPane.showMessageDialog(null, "Habitacion ocupada correctamente");
         }
         else {
-            JOptionPane.showMessageDialog(null, "Error al reservar la habitacion");
+            JOptionPane.showMessageDialog(null, "Error al ocupar la habitacion");
         }
     }
 
