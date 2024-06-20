@@ -111,7 +111,7 @@ public class Informes {
                 while (rs.next()) {
                     String tipo = rs.getString("tipo");
                     if (tiposServicios.length() > 0) {
-                        tiposServicios.append(", ");
+                        tiposServicios.append("\n");
                     }
                     tiposServicios.append(tipo);
                 }
