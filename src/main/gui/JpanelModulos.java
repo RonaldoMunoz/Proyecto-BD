@@ -260,7 +260,7 @@ public class JpanelModulos extends javax.swing.JPanel implements CambiarPanel{
     }
 
     private void jButtonGestionarPerfilesActionPerformed(java.awt.event.ActionEvent evt) {
-        cambiarPanel(GUI_principal.panelReportes,GUI_principal.Bg);
+        cambiarPanel(GUI_principal.panelPerfiles,GUI_principal.Bg);
     }
 
     private void jButtonHabitacionActionPerformed(java.awt.event.ActionEvent evt) {
