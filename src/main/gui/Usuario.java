@@ -8,20 +8,20 @@ public class Usuario {
     String password;
 
         // gerente
-        private static boolean generarInforme = false;
-        private static boolean visualizarInfo = false;
+        public static boolean generarInforme = false;
+        public static boolean visualizarInfo = false;
     
         // cajero:
     
-        private static boolean checkOut = false;
+         static boolean checkOut = false;
     
         // recepcionista
-        private static boolean registrarReserva = false;
-        private static boolean cancelarReserva = false;
-        private static boolean registrarServSolicitados = false;
-        private static boolean consultarHabitaciones= false;
+         public static boolean registrarReserva = false;
+         public static boolean cancelarReserva = false;
+         public static boolean registrarServSolicitados = false;
+         public static boolean consultarHabitaciones= false;
         // administrador
-        private static boolean gestionarUsuarios = false;
+         public static boolean gestionarUsuarios = false;
         //todos
 
     public static ArrayList<Usuario> listaUser = new ArrayList<Usuario>();
@@ -120,9 +120,10 @@ public class Usuario {
         return false;
     }
     
-    public void asignarPrivilegios(String rol){
+    static void asignarPrivilegios(String rol){
         switch (rol) {
             case "Administrador":
+                resetPrivilegios();
                 generarInforme = true;
                 visualizarInfo = true;
                 checkOut = true;
@@ -133,13 +134,16 @@ public class Usuario {
                 gestionarUsuarios = true;
                 break;
             case "Gerente":
+                resetPrivilegios();
                 generarInforme = true;
                 visualizarInfo = true;
                 break;
             case "Cajero":
+                resetPrivilegios();
                 checkOut = true;
                 break;
             case "Recepcionista":
+                resetPrivilegios();
                 registrarReserva = true;
                 cancelarReserva = true;
                 registrarServSolicitados = true;
@@ -150,7 +154,7 @@ public class Usuario {
         }
     }
 
-    public void resetPrivilegios(){
+    public static void resetPrivilegios(){
         generarInforme = false;
         visualizarInfo = false;
         checkOut = false;

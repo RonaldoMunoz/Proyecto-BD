@@ -34,7 +34,7 @@ public class PanelLogin extends javax.swing.JPanel implements CambiarPanel{
         setPreferredSize(new java.awt.Dimension(810, 640));
         setLayout(null);
 
-        jLabel2.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Hotel El Descanso");
         add(jLabel2);
@@ -145,6 +145,8 @@ public class PanelLogin extends javax.swing.JPanel implements CambiarPanel{
         char[] password = jPasswordField1.getPassword();
         if(Usuario.login(perfil,nombreUsuario, new String(password))) {
             cambiarPanel(GUI_principal.modulosPanel,GUI_principal.Bg);
+            Usuario.asignarPrivilegios(perfil);
+
         }
        else {
             javax.swing.JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos");

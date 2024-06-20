@@ -1,5 +1,5 @@
 
-package habitaciones_paneles;
+package gui;
 
 import java.awt.event.ActionEvent;
 import java.sql.Date;

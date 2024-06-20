@@ -5,6 +5,9 @@
 package reserva_paneles;
 
 import gui.GUI_principal;
+import gui.Usuario;
+
+import javax.swing.JOptionPane;
 
 import gui.CambiarPanel;
 
@@ -185,12 +188,20 @@ public class Panel_ReservaOpciones extends javax.swing.JPanel implements Cambiar
     }//GEN-LAST:event_jButtonConsultarReservaActionPerformed
 
     private void jButtonCancelarReservaActionPerformed(java.awt.event.ActionEvent evt) {
+        if(Usuario.cancelarReserva == false){
+            JOptionPane.showMessageDialog(null, "No tienes permisos para cancelar reservas");
+            return;
+        }
         cambiarPanelInt(Panel_CancelarReserva , panel_Interno_Options);
     }//GEN-LAST:event_jButtonCancelarReservaActionPerformed
 
     private void jButtonHacerReservaActionPerformed(java.awt.event.ActionEvent evt) {
+        if(Usuario.registrarReserva == false){
+            JOptionPane.showMessageDialog(null, "No tienes permisos para hacer reservas");
+            return;
+        }
         cambiarPanelInt(Panel_HacerReserva , panel_Interno_Options);
-    }//GEN-LAST:event_jButtonHacerReservaActionPerformed
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

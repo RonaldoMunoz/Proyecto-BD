@@ -31,6 +31,7 @@ public class GUI_principal extends javax.swing.JFrame implements CambiarPanel{
     public static Panel_Check_In panelCheckIn = new Panel_Check_In();
     public static Panel_CheckOut panelCheckOut = new Panel_CheckOut();
     public static Panel_Perfiles panelPerfiles = new Panel_Perfiles();
+    public static PanelClienteNoReserva panelNoReserva = new PanelClienteNoReserva() ;
 
     
 
