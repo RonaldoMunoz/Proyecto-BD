@@ -5,7 +5,7 @@ import db.Reservas;
 
 /**
  *
- * @author maico
+ * @author maicol
  */
 public class Panel_ConsultarReserva extends javax.swing.JPanel {
 
@@ -90,13 +90,14 @@ public class Panel_ConsultarReserva extends javax.swing.JPanel {
                 .addGap(28, 28, 28)
                 .addComponent(jButtonMostrarReservar))
         );
-    }// </editor-fold>//GEN-END:initComponents
+    }
 
     private void jTextFieldIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldIDActionPerformed
+        
+    }
 
 private void jButtonMostrarReservarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMostrarReservarActionPerformed
+    /* 
     // Simulación de consulta de reserva
     String idReserva = jTextFieldID.getText(); // Obtener la identificación de la reserva
     if (!idReserva.isEmpty()) {
@@ -118,14 +119,16 @@ private void jButtonMostrarReservarActionPerformed(java.awt.event.ActionEvent ev
     } else {
         System.out.println("Error: Debes ingresar la identificación de la reserva.");
     }
-}//GEN-LAST:event_jButtonMostrarReservarActionPerformed
+        */
+    
+}
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration
     private javax.swing.JButton jButtonMostrarReservar;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField jTextFieldID;
-    // End of variables declaration//GEN-END:variables
+    // End of variables declaration
 }

@@ -25,7 +25,6 @@ public class Panel_CheckOut extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-
         jLabel7 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel2 = new javax.swing.JLabel();
@@ -38,59 +37,67 @@ public class Panel_CheckOut extends javax.swing.JPanel {
         jLabel12 = new javax.swing.JLabel();
         jTextFieldHABITACION2 = new javax.swing.JTextField();
         jButtonGenerarFactura = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextFactura = new javax.swing.JTextArea();
 
         setBackground(new java.awt.Color(29, 29, 29));
         setMaximumSize(new java.awt.Dimension(640, 640));
         setMinimumSize(new java.awt.Dimension(640, 640));
         setPreferredSize(new java.awt.Dimension(640, 640));
+        setLayout(null);
 
         jLabel7.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Check-out");
+        add(jLabel7);
+        jLabel7.setBounds(280, 10, 83, 22);
+        add(jSeparator1);
+        jSeparator1.setBounds(0, 40, 640, 50);
 
         jLabel2.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Identificacion:");
+        add(jLabel2);
+        jLabel2.setBounds(30, 110, 90, 17);
 
-        jTextFieldID.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldIDActionPerformed(evt);
-            }
-        });
+        add(jTextFieldID);
+        jTextFieldID.setBounds(170, 110, 240, 22);
 
         jLabel9.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Numero Habitacion:");
+        add(jLabel9);
+        jLabel9.setBounds(30, 150, 125, 17);
 
-        jTextFieldHABITACION.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldHABITACIONActionPerformed(evt);
-            }
-        });
+
+        add(jTextFieldHABITACION);
+        jTextFieldHABITACION.setBounds(170, 150, 240, 22);
 
         jLabel10.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Ingresa los siguientes datos:");
+        add(jLabel10);
+        jLabel10.setBounds(30, 70, 176, 17);
 
         jLabel11.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Hora de Salida:");
+        add(jLabel11);
+        jLabel11.setBounds(30, 190, 93, 17);
 
-        jTextFieldHABITACION1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldHABITACION1ActionPerformed(evt);
-            }
-        });
+
+        add(jTextFieldHABITACION1);
+        jTextFieldHABITACION1.setBounds(170, 190, 240, 22);
 
         jLabel12.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Fecha de Salida:");
+        add(jLabel12);
+        jLabel12.setBounds(30, 230, 100, 17);
 
-        jTextFieldHABITACION2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldHABITACION2ActionPerformed(evt);
-            }
-        });
+
+        add(jTextFieldHABITACION2);
+        jTextFieldHABITACION2.setBounds(170, 230, 240, 22);
 
         jButtonGenerarFactura.setBackground(new java.awt.Color(29, 29, 29));
         jButtonGenerarFactura.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
@@ -101,94 +108,28 @@ public class Panel_CheckOut extends javax.swing.JPanel {
                 jButtonGenerarFacturaActionPerformed(evt);
             }
         });
+        add(jButtonGenerarFactura);
+        jButtonGenerarFactura.setBounds(30, 290, 132, 24);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(280, 280, 280)
-                .addComponent(jLabel7))
-            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabel10))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabel2)
-                .addGap(50, 50, 50)
-                .addComponent(jTextFieldID, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabel9)
-                .addGap(15, 15, 15)
-                .addComponent(jTextFieldHABITACION, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabel11)
-                .addGap(47, 47, 47)
-                .addComponent(jTextFieldHABITACION1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabel12)
-                .addGap(40, 40, 40)
-                .addComponent(jTextFieldHABITACION2, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jButtonGenerarFactura))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(jLabel7)
-                .addGap(8, 8, 8)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(jLabel10)
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextFieldID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel9)
-                    .addComponent(jTextFieldHABITACION, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel11)
-                    .addComponent(jTextFieldHABITACION1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel12)
-                    .addComponent(jTextFieldHABITACION2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(38, 38, 38)
-                .addComponent(jButtonGenerarFactura))
-        );
-    }// </editor-fold>//GEN-END:initComponents
+        jTextFactura.setBackground(new java.awt.Color(29, 29, 29));
+        jTextFactura.setColumns(20);
+        jTextFactura.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        jTextFactura.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFactura.setRows(5);
+        jScrollPane2.setViewportView(jTextFactura);
 
-    private void jTextFieldIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldIDActionPerformed
+        add(jScrollPane2);
+        jScrollPane2.setBounds(30, 350, 580, 230);
+    }
 
-    private void jTextFieldHABITACIONActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldHABITACIONActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldHABITACIONActionPerformed
+    
 
-    private void jTextFieldHABITACION1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldHABITACION1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldHABITACION1ActionPerformed
-
-    private void jTextFieldHABITACION2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldHABITACION2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldHABITACION2ActionPerformed
-
-    private void jButtonGenerarFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGenerarFacturaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonGenerarFacturaActionPerformed
+    private void jButtonGenerarFacturaActionPerformed(java.awt.event.ActionEvent evt) {
+        
+    }
 
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration 
     private javax.swing.JButton jButtonGenerarFactura;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -196,7 +137,9 @@ public class Panel_CheckOut extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTextArea jTextFactura;
     private javax.swing.JTextField jTextFieldHABITACION;
     private javax.swing.JTextField jTextFieldHABITACION1;
     private javax.swing.JTextField jTextFieldHABITACION2;

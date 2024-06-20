@@ -48,7 +48,7 @@ public class Panel_CancelarReserva extends javax.swing.JPanel {
 
         jLabel2.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Identificacion:");
+        jLabel2.setText("Numero de reserva");
 
         jTextFieldID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

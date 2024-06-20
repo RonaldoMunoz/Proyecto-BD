@@ -26,112 +26,74 @@ public class Panel_Consolidado extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabelMes = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jButtonConsultarConsolidado = new javax.swing.JButton();
-        mes_Seleccionado = new javax.swing.JComboBox<>();
         label_Consolidado = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         label_ConsultaDispo = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jButtonCalcularVentaxMes = new javax.swing.JButton();
+        jTextFieldFecha = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(29, 29, 29));
         setMaximumSize(new java.awt.Dimension(640, 640));
         setMinimumSize(new java.awt.Dimension(640, 640));
         setPreferredSize(new java.awt.Dimension(640, 640));
-
-        jLabelMes.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        jLabelMes.setForeground(new java.awt.Color(255, 255, 255));
+        setLayout(null);
 
         jLabel4.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Venta de servicios en el mes de:");
+        jLabel4.setText("Consolidado de servicios en la fecha indicada");
+        add(jLabel4);
+        jLabel4.setBounds(50, 190, 290, 20);
 
         jLabel3.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Generar consolidado de los servicios vendidos en el mes:");
-
-        jButtonConsultarConsolidado.setBackground(new java.awt.Color(29, 29, 29));
-        jButtonConsultarConsolidado.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        jButtonConsultarConsolidado.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonConsultarConsolidado.setText("Consultar");
-
-        mes_Seleccionado.setBackground(new java.awt.Color(29, 29, 29));
-        mes_Seleccionado.setForeground(new java.awt.Color(255, 255, 255));
-        mes_Seleccionado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        mes_Seleccionado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mes_SeleccionadoActionPerformed(evt);
-            }
-        });
+        jLabel3.setText("Generar consolidado de los servicios vendidos en la fecha indicada");
+        add(jLabel3);
+        jLabel3.setBounds(50, 100, 347, 17);
 
         label_Consolidado.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         label_Consolidado.setForeground(new java.awt.Color(255, 255, 255));
+        add(label_Consolidado);
+        label_Consolidado.setBounds(50, 220, 550, 350);
+        add(jSeparator1);
+        jSeparator1.setBounds(0, 40, 650, 20);
 
         label_ConsultaDispo.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         label_ConsultaDispo.setForeground(new java.awt.Color(255, 255, 255));
         label_ConsultaDispo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         label_ConsultaDispo.setText("Generar Consolidado De Servicios Vendidos");
+        add(label_ConsultaDispo);
+        label_ConsultaDispo.setBounds(10, 0, 640, 40);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(label_ConsultaDispo, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(jLabel3))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(60, 60, 60)
-                .addComponent(mes_Seleccionado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButtonConsultarConsolidado))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(jLabel4)
-                .addGap(7, 7, 7)
-                .addComponent(jLabelMes, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(label_Consolidado, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(label_ConsultaDispo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
-                .addComponent(jLabel3)
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(mes_Seleccionado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonConsultarConsolidado, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelMes, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
-                .addComponent(label_Consolidado, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        jLabel1.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Ingresa el año y el mes (A/M)");
+        add(jLabel1);
+        jLabel1.setBounds(50, 150, 184, 17);
+
+        jButtonCalcularVentaxMes.setBackground(new java.awt.Color(29, 29, 29));
+        jButtonCalcularVentaxMes.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jButtonCalcularVentaxMes.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonCalcularVentaxMes.setText("Consultar");
+        add(jButtonCalcularVentaxMes);
+        jButtonCalcularVentaxMes.setBounds(400, 150, 83, 22);
+
+        jTextFieldFecha.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        add(jTextFieldFecha);
+        jTextFieldFecha.setBounds(250, 150, 120, 20);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void mes_SeleccionadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mes_SeleccionadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mes_SeleccionadoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonConsultarConsolidado;
+    private javax.swing.JButton jButtonCalcularVentaxMes;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabelMes;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTextField jTextFieldFecha;
     private javax.swing.JLabel label_Consolidado;
     private javax.swing.JLabel label_ConsultaDispo;
-    private javax.swing.JComboBox<String> mes_Seleccionado;
     // End of variables declaration//GEN-END:variables
 }

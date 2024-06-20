@@ -12,6 +12,7 @@ import javax.swing.JPanel;
 
 import CheckOut_paneles.Panel_CheckOut;
 import clientes_paneles.Panel_Clientes_opciones;
+import gestionarPerfiles.Panel_Perfiles;
 
 
 /**
@@ -29,6 +30,7 @@ public class GUI_principal extends javax.swing.JFrame implements CambiarPanel{
     public static Informes_Opciones panelReportes = new Informes_Opciones();
     public static Panel_Check_In panelCheckIn = new Panel_Check_In();
     public static Panel_CheckOut panelCheckOut = new Panel_CheckOut();
+    public static Panel_Perfiles panelPerfiles = new Panel_Perfiles();
 
     
 
