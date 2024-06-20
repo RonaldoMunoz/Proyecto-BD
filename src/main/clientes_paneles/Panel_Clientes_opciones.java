@@ -16,9 +16,7 @@ public class Panel_Clientes_opciones extends javax.swing.JPanel implements Cambi
         initComponents();
     }
 
-  
-    @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+
     private void initComponents() {
         jButtonRegistrarServicio = new javax.swing.JButton();
         jButtonGeneralTotalCliente = new javax.swing.JButton();

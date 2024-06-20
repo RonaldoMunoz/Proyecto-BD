@@ -2,6 +2,11 @@
 package habitaciones_paneles;
 
 import java.awt.event.ActionEvent;
+import java.sql.Date;
+
+import javax.swing.JOptionPane;
+
+import db.Reservas;
 
 /**
  *
@@ -206,7 +211,8 @@ public class PanelClienteNoReserva extends javax.swing.JPanel {
 
     private void jButtonAsignarActionPerformed(ActionEvent evt) {
         
-
+        String consulta = Reservas.asignarHabitacion(getId(), getNombre(), getApellido(), getCorreo(), getTelefono(), getHabitacion(), getFechaEntrada(), getDias());
+        JOptionPane.showMessageDialog(this, consulta);
     }
 
     public String getNombre() {
@@ -225,20 +231,21 @@ public class PanelClienteNoReserva extends javax.swing.JPanel {
         return jTextFieldTELEFONO.getText();
     }
 
-    public String getDias() {
-        return jTextFieldDIAS.getText();
+    public Integer getDias() {
+        return Integer.parseInt(jTextFieldDIAS.getText());
     }
 
-    public String getFechaEntrada() {
-        return jTextFieldF_ENTRADA.getText();
+    public Date getFechaEntrada() {
+        Date fecha = Date.valueOf(jTextFieldF_ENTRADA.getText());
+        return fecha;
     }
 
-    public String getHabitacion() {
-        return jTextFieldHABITACION.getText();
+    public Integer getHabitacion() {
+        return Integer.parseInt(jTextFieldHABITACION.getText());
     }
 
-    public String getId() {
-        return jTextFieldID.getText();
+    public Integer getId() {
+        return Integer.parseInt(jTextFieldID.getText());
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

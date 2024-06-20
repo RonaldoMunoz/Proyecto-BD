@@ -6,6 +6,10 @@ package habitaciones_paneles;
 
 import java.awt.event.ActionEvent;
 
+import javax.swing.JOptionPane;
+
+import db.Habitaciones;
+
 /**
  *
  * @author usuario
@@ -150,15 +154,21 @@ public class ConsultarPrecio_Panel extends javax.swing.JPanel {
         );
     }
 
-    private void jButtonRealizarCambiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRealizarCambiosActionPerformed
-        
-        
+    private void jButtonRealizarCambiosActionPerformed(java.awt.event.ActionEvent evt) {
+        String tipoH = obtenerTipo();
+        Boolean consultar = Habitaciones.modificarPrecio(tipoH,  Double.parseDouble(obtenerPrecioNuevo()));
+        if(consultar){
+            JOptionPane.showMessageDialog(null, "Precio modificado con exito");
+        }else{
+            JOptionPane.showMessageDialog(null, "Error al modificar el precio");
+        }
     }
 
     private void jButtonConsultarPrecioActionPerformed(ActionEvent evt) {
         
         String tipoH = obtenerTipo();
-        
+        Habitaciones.consultarPrecio(tipoH);
+        label_ConsultaPrecio.setText(Habitaciones.consultarPrecio(tipoH));
     }
 
     private String obtenerTipo() {
