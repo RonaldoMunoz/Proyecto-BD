@@ -28,12 +28,25 @@ abstract public class Clientes {
         return false;
     }
 
-    public static boolean crearCliente(int idCliente, String nombre, String apellido, String correo, String telefono) {
-        String sql = """
-                "INSERT INTO CLIENTES VALUES (?, ?, ?, ?, ?)";
+    private static boolean crearEsporadico(int idCliente) {
+        String sql = "INSERT INTO ESPORADICOS VALUES (?)";
 
-                INSERT INTO ESPORADICOS VALUES (?);
-                """;
+        try (
+            Connection conn = ConexionDB.obtenerConexion();
+            PreparedStatement stmt = conn.prepareStatement(sql);
+        ) {
+            stmt.setInt(1, idCliente);
+
+            if (stmt.executeUpdate() > 0) return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return false;
+    }
+
+    public static boolean crearCliente(int idCliente, String nombre, String apellido, String correo, String telefono) {
+        String sql = "INSERT INTO CLIENTES VALUES (?, ?, ?, ?, ?)";
 
         try (
             Connection conn = ConexionDB.obtenerConexion();
@@ -44,9 +57,8 @@ abstract public class Clientes {
             stmt.setString(3, apellido);
             stmt.setString(4, correo);
             stmt.setString(5, telefono);
-            stmt.setInt(6, idCliente);
 
-            if (stmt.executeUpdate() > 0) return true;
+            if (stmt.executeUpdate() > 0 && crearEsporadico(idCliente)) return true;
         } catch (SQLException e) {
             e.printStackTrace();
         }

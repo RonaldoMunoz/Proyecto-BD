@@ -198,18 +198,19 @@ private void reemplazarTexto(String nombre, String tipo, String descuento){
     jLabelNombreCliente.setText(nombre);
     jRadioButton1.setEnabled(false);
     jRadioButton2.setEnabled(false);
+    label_TipoCliente.setText("");
 
-    if (!tipo.equals(null)){
+    if (tipo != null){
         label_TipoCliente.setText(tipo);
         jRadioButton1.setEnabled(true);
         jRadioButton1.setSelected(true);
-    }
-    else{
+    } else{
         jRadioButton2.setEnabled(true);
         jRadioButton2.setSelected(true);
     }
 
-    jLabelDescuentoParaCliente.setText(Double.toString(Double.parseDouble(descuento) * 100) + "%");    
+    if (descuento != null) jLabelDescuentoParaCliente.setText(Double.toString(Double.parseDouble(descuento) * 100) + "%");
+    else jLabelDescuentoParaCliente.setText("");    
 }
     // Variables declaration 
     private javax.swing.JButton jButtonConsultarEstado;
