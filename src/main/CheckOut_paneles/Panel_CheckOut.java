@@ -3,11 +3,10 @@ package CheckOut_paneles;
 
 import java.sql.Date;
 import java.sql.Time;
-
 import javax.swing.JOptionPane;
 
 import db.CheckOut;
-import javafx.scene.control.CheckBox;
+
 
 /**
  *
