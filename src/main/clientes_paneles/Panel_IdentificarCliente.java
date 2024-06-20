@@ -2,9 +2,12 @@
 package clientes_paneles;
 
 import java.awt.event.ActionEvent;
+import java.util.ArrayList;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
+
+import db.Clientes;
 
 /**
  *
@@ -50,8 +53,10 @@ public class Panel_IdentificarCliente extends javax.swing.JPanel {
             }
 
             private void jButtonConsultarEstadoActionPerformed(ActionEvent evt) {
-                obtenerIdClient();
-                reemplazarTexto("ronadol","Habitual", "0");         
+                int idCliente = Integer.parseInt(obtenerIdClient());
+                ArrayList<String> res = new ArrayList<String>(Clientes.buscarCliente(idCliente));
+                
+                reemplazarTexto(res.get(0), res.get(1), res.get(2));
             }
         });
 
@@ -191,20 +196,20 @@ private void reemplazarTexto(String nombre, String tipo, String descuento){
     }
 
     jLabelNombreCliente.setText(nombre);
-    if (tipo.equals("Habitual")){
+    jRadioButton1.setEnabled(false);
+    jRadioButton2.setEnabled(false);
+
+    if (!tipo.equals(null)){
+        label_TipoCliente.setText(tipo);
         jRadioButton1.setEnabled(true);
         jRadioButton1.setSelected(true);
     }
-    else if (tipo.equals("Esporadico")){
+    else{
         jRadioButton2.setEnabled(true);
         jRadioButton2.setSelected(true);
     }
-    else {
-        jRadioButton1.setEnabled(false);
-        jRadioButton2.setEnabled(false);
-    }
 
-    jLabelDescuentoParaCliente.setText(descuento);    
+    jLabelDescuentoParaCliente.setText(Double.toString(Double.parseDouble(descuento) * 100) + "%");    
 }
     // Variables declaration 
     private javax.swing.JButton jButtonConsultarEstado;
