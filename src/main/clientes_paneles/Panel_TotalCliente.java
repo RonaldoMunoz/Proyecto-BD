@@ -136,7 +136,23 @@ public class Panel_TotalCliente extends javax.swing.JPanel {
                 .addGap(10, 10, 10)
                 .addComponent(label_Listar1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-    }// </editor-fold>//GEN-END:initComponents
+    }
+
+    private String obtenerId(){
+        return jText_IDcliente.getText();
+    }
+
+    private String obtenerTipoHabitacion(){
+        return jCoBoxTipoHabitacion.getSelectedItem().toString();
+    }
+
+    private String obtenerNumDias(){
+        return jTextNumDias.getText();
+    }
+
+    private void jButtonGenerarTotalActionPerformed(java.awt.event.ActionEvent evt) {
+        
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -160,11 +160,11 @@ public class ConsultarPrecio_Panel extends javax.swing.JPanel {
         throw new UnsupportedOperationException("Unimplemented method 'jButtonConsultarPrecioActionPerformed'");
     }
 
-    private String obtenerTipo(javax.swing.JComboBox jCoBoxTipoHabitacion) {
+    private String obtenerTipo() {
         return jCoBoxTipoHabitacion.getSelectedItem().toString();
     }
 
-    private String obtenerPrecioNuevo(javax.swing.JTextField jTextFieldPrecioNuevo) {
+    private String obtenerPrecioNuevo() {
         return jTextFieldPrecioNuevo.getText();
     }
 

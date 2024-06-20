@@ -145,13 +145,27 @@ public class Panel_Check_In extends javax.swing.JPanel {
         );
     }
 
-    private String jButtonAceptarActionPerformed(java.awt.event.ActionEvent evt) {
+    private String obtenerID(){
         return jTextFied_idCliente.getText();
     }
 
-    private void jButtonAsignarActionPerformed(java.awt.event.ActionEvent  evt) {
-        // to do 
+    private String obtenerHabitacion(){
+        return jTextFieldHabitacionAsignar.getText();
     }
+
+    private void limpiarCampos(){
+        jTextFied_idCliente.setText("");
+        jTextFieldHabitacionAsignar.setText("");
+    }
+
+    private void jButtonAceptarActionPerformed(java.awt.event.ActionEvent evt) {
+    }
+
+    private void jButtonAsignarActionPerformed(java.awt.event.ActionEvent  evt) {
+        
+    }
+
+    
 
 
     // Variables declaration                   

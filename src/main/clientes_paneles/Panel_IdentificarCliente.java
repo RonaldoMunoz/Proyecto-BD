@@ -188,8 +188,8 @@ private void reemplazarTexto(String nombre, String tipo, String descuento){
         jRadioButton2.setEnabled(false);
         JOptionPane.showMessageDialog(null, "El cliente no existe en la BD", "Error", JOptionPane.ERROR_MESSAGE);
         
-    
     }
+
     jLabelNombreCliente.setText(nombre);
     if (tipo.equals("Habitual")){
         jRadioButton1.setEnabled(true);
@@ -206,7 +206,7 @@ private void reemplazarTexto(String nombre, String tipo, String descuento){
 
     jLabelDescuentoParaCliente.setText(descuento);    
 }
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration 
     private javax.swing.JButton jButtonConsultarEstado;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;

@@ -128,6 +128,24 @@ public class Panel_CheckOut extends javax.swing.JPanel {
         
     }
 
+    private String obtenerFecha(){
+        return jTextFieldHABITACION.getText();
+    }
+
+    private String obtenerHora(){
+        return jTextFieldHABITACION2.getText();
+    }
+
+    private String obtenerID(){
+        return jTextFieldID.getText();
+    }
+
+    private String obtenerHabitacion(){
+        return jTextFieldHABITACION1.getText();
+    }
+    
+
+
 
     // Variables declaration 
     private javax.swing.JButton jButtonGenerarFactura;
@@ -140,9 +158,9 @@ public class Panel_CheckOut extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextArea jTextFactura;
-    private javax.swing.JTextField jTextFieldHABITACION;
-    private javax.swing.JTextField jTextFieldHABITACION1;
-    private javax.swing.JTextField jTextFieldHABITACION2;
+    private javax.swing.JTextField jTextFieldHABITACION; //fecha
+    private javax.swing.JTextField jTextFieldHABITACION1; // habitacion
+    private javax.swing.JTextField jTextFieldHABITACION2; // hora
     private javax.swing.JTextField jTextFieldID;
     // End of variables declaration//GEN-END:variables
 }

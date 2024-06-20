@@ -8,9 +8,8 @@ import gui.GUI_principal;
  */
 public class Panel_Perfiles extends javax.swing.JPanel implements CambiarPanel {
 
-    /**
-     * Creates new form Panel_Perfiles
-     */
+    
+
     public Panel_Perfiles() {
         initComponents();
     }

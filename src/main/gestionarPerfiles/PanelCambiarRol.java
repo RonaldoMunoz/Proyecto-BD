@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
+
 package gestionarPerfiles;
 
 /**
@@ -10,9 +7,8 @@ package gestionarPerfiles;
  */
 public class PanelCambiarRol extends javax.swing.JPanel {
 
-    /**
-     * Creates new form PanelCambiarRol
-     */
+    public static String[] roles = {"Administrador", "Recepcionista", "Contador", "Gerente"};
+
     public PanelCambiarRol() {
         initComponents();
     }
@@ -41,7 +37,7 @@ public class PanelCambiarRol extends javax.swing.JPanel {
         add(jLabel4);
         jLabel4.setBounds(230, 160, 220, 17);
 
-        perfilUser.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        perfilUser.setModel(new javax.swing.DefaultComboBoxModel<>(roles));
         add(perfilUser);
         perfilUser.setBounds(290, 190, 72, 22);
 
@@ -64,11 +60,20 @@ public class PanelCambiarRol extends javax.swing.JPanel {
         jTextFieldUserName.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         add(jTextFieldUserName);
         jTextFieldUserName.setBounds(280, 260, 110, 20);
-    }// </editor-fold>//GEN-END:initComponents
+    }
 
     private void jButtonCambiarRolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCambiarRolActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonCambiarRolActionPerformed
+        
+    }
+
+    private String getRol() {
+        return perfilUser.getSelectedItem().toString();
+    }
+
+    private String getUserName() {
+        return jTextFieldUserName.getText();
+    }
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

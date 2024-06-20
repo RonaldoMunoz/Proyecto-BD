@@ -158,7 +158,12 @@ public class PanelVerificar_CambiarEstado extends javax.swing.JPanel {
 
     }
 
-    private String jButtonConsultarEstadoActionPerformed(ActionEvent evt) {
+    private void jButtonConsultarEstadoActionPerformed(ActionEvent evt) {
+
+    }
+
+
+    private String obtenerEstadoSeleccionado(){
         if (jRadioButton1.isSelected()) {
             return jRadioButton1.getText();
         } else if (jRadioButton2.isSelected()) {
@@ -188,6 +193,23 @@ public class PanelVerificar_CambiarEstado extends javax.swing.JPanel {
         this.repaint();
     }
 
+    public String obtenerNumHabitacion(){
+        return jTextFieldPrecioNuevo.getText();
+    }
+
+    public void setEstado(String estado){
+        if (estado.equals("Ocupado")) {
+            jRadioButton1.setSelected(true);
+        } else if (estado.equals("Reservado")) {
+            jRadioButton2.setSelected(true);
+        } else if (estado.equals("Disponible")) {
+            jRadioButton3.setSelected(true);
+        }
+    }
+
+    
+
+
 
     //                                                     Variables declaration 
     private ButtonGroup group = new ButtonGroup();
@@ -199,7 +221,7 @@ public class PanelVerificar_CambiarEstado extends javax.swing.JPanel {
     private javax.swing.JRadioButton jRadioButton2; // reservado
     private javax.swing.JRadioButton jRadioButton3; // disponible
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextField jTextFieldPrecioNuevo;
+    private javax.swing.JTextField jTextFieldPrecioNuevo; // num habitacion
     private javax.swing.JLabel label_ConsultaDispo;
     private javax.swing.JLabel label_ConsultaDispo1;
     //                                                      End of variables declaration

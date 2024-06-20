@@ -4,6 +4,8 @@
  */
 package informes_paneles;
 
+import java.awt.event.ActionEvent;
+
 /**
  *
  * @author usuario
@@ -63,6 +65,11 @@ public class DatosEstadisticosPanel extends javax.swing.JPanel {
         jButtonCalcularVentaxMes.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jButtonCalcularVentaxMes.setForeground(new java.awt.Color(255, 255, 255));
         jButtonCalcularVentaxMes.setText("Consultar");
+        jButtonCalcularVentaxMes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCalcularVentaxMesActionPerformed(evt);
+            }
+        });
 
         jTextFieldFecha.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
 
@@ -144,6 +151,25 @@ public class DatosEstadisticosPanel extends javax.swing.JPanel {
     }
 
 
+    private void jButtonCalcularVentaxMesActionPerformed(ActionEvent evt) {
+        
+    }
+
+    private String obtenerFecha(){
+        return jTextFieldFecha.getText();
+    }
+
+    private void setPorcentajeOcupacion(String porcentaje){
+        porcentajeOcupacion.setText(porcentaje);
+    }
+
+    private void setServicioMasSolicitado(String servicio){
+        jLabelServicioMasSolicitado.setText(servicio);
+    }
+
+    private void setPorcentajeReservarCanceladasd(String porcentaje){
+        porcentajeDeReservasCanceladas.setText(porcentaje);
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
