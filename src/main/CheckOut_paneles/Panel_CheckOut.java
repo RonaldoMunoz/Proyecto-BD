@@ -20,6 +20,7 @@ public class Panel_CheckOut extends javax.swing.JPanel {
     }
 
     private void initComponents() {
+
         jLabel7 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel2 = new javax.swing.JLabel();
@@ -28,9 +29,9 @@ public class Panel_CheckOut extends javax.swing.JPanel {
         jTextFieldHABITACION = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jTextFieldHABITACION1 = new javax.swing.JTextField();
+        jTextFieldHora = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        jTextFieldHABITACION2 = new javax.swing.JTextField();
+        jTextFieldFecha = new javax.swing.JTextField();
         jButtonGenerarFactura = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextFactura = new javax.swing.JTextArea();
@@ -64,7 +65,6 @@ public class Panel_CheckOut extends javax.swing.JPanel {
         add(jLabel9);
         jLabel9.setBounds(30, 150, 125, 17);
 
-
         add(jTextFieldHABITACION);
         jTextFieldHABITACION.setBounds(170, 150, 240, 22);
 
@@ -80,9 +80,8 @@ public class Panel_CheckOut extends javax.swing.JPanel {
         add(jLabel11);
         jLabel11.setBounds(30, 190, 93, 17);
 
-
-        add(jTextFieldHABITACION1);
-        jTextFieldHABITACION1.setBounds(170, 190, 240, 22);
+        add(jTextFieldHora);
+        jTextFieldHora.setBounds(170, 190, 240, 22);
 
         jLabel12.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
@@ -91,8 +90,8 @@ public class Panel_CheckOut extends javax.swing.JPanel {
         jLabel12.setBounds(30, 230, 100, 17);
 
 
-        add(jTextFieldHABITACION2);
-        jTextFieldHABITACION2.setBounds(170, 230, 240, 22);
+        add(jTextFieldFecha);
+        jTextFieldFecha.setBounds(170, 230, 240, 22);
 
         jButtonGenerarFactura.setBackground(new java.awt.Color(29, 29, 29));
         jButtonGenerarFactura.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
@@ -120,7 +119,7 @@ public class Panel_CheckOut extends javax.swing.JPanel {
     
 
     private void jButtonGenerarFacturaActionPerformed(java.awt.event.ActionEvent evt) {
-        if(jTextFieldID.getText().isEmpty() || jTextFieldHABITACION.getText().isEmpty() || jTextFieldHABITACION1.getText().isEmpty() || jTextFieldHABITACION2.getText().isEmpty()){
+        if(jTextFieldID.getText().isEmpty() || jTextFieldHABITACION.getText().isEmpty() || jTextFieldFecha.getText().isEmpty() || jTextFieldHora.getText().isEmpty()){
             
             JOptionPane.showMessageDialog(null, "Por favor, llene todos los campos" );
         }
@@ -129,11 +128,11 @@ public class Panel_CheckOut extends javax.swing.JPanel {
     }
 
     private Date obtenerFecha(){
-        return Date.valueOf(jTextFieldHABITACION.getText());
+        return Date.valueOf(jTextFieldFecha.getText());
     }
 
     private Time obtenerHora(){
-        return Time.valueOf(jTextFieldHABITACION2.getText());
+        return Time.valueOf(jTextFieldHora.getText());
     }
 
     private Integer obtenerID(){
@@ -141,7 +140,7 @@ public class Panel_CheckOut extends javax.swing.JPanel {
     }
 
     private Integer obtenerHabitacion(){
-        return Integer.parseInt(jTextFieldHABITACION1.getText());
+        return Integer.parseInt(jTextFieldHABITACION.getText());
     }
     
 
@@ -159,9 +158,9 @@ public class Panel_CheckOut extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextArea jTextFactura;
-    private javax.swing.JTextField jTextFieldHABITACION; //fecha
-    private javax.swing.JTextField jTextFieldHABITACION1; // habitacion
-    private javax.swing.JTextField jTextFieldHABITACION2; // hora
+    private javax.swing.JTextField jTextFieldFecha;
+    private javax.swing.JTextField jTextFieldHABITACION;
+    private javax.swing.JTextField jTextFieldHora;
     private javax.swing.JTextField jTextFieldID;
     // End of variables declaration//GEN-END:variables
 }
