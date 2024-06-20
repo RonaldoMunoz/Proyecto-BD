@@ -4,6 +4,10 @@
  */
 package clientes_paneles;
 
+import java.util.ArrayList;
+
+import db.Clientes;
+
 /**
  *
  * @author usuario
@@ -50,7 +54,7 @@ public class Panel_TotalCliente extends javax.swing.JPanel {
         jCoBoxTipoHabitacion.setBackground(new java.awt.Color(29, 29, 29));
         jCoBoxTipoHabitacion.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jCoBoxTipoHabitacion.setForeground(new java.awt.Color(255, 255, 255));
-        jCoBoxTipoHabitacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jCoBoxTipoHabitacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "sencilla", "doble", "matrimonial", "suite sencilla", "suite presidencial" }));
 
         jLabel3.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -60,6 +64,11 @@ public class Panel_TotalCliente extends javax.swing.JPanel {
         jButtonGenerarTotal.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jButtonGenerarTotal.setForeground(new java.awt.Color(255, 255, 255));
         jButtonGenerarTotal.setText("Consultar");
+        jButtonGenerarTotal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonGenerarTotalActionPerformed(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -151,7 +160,11 @@ public class Panel_TotalCliente extends javax.swing.JPanel {
     }
 
     private void jButtonGenerarTotalActionPerformed(java.awt.event.ActionEvent evt) {
-        
+        int idCliente = Integer.parseInt(obtenerId());
+        String tipoHab = obtenerTipoHabitacion();
+        int numDias = Integer.parseInt(obtenerNumDias());
+
+        label_Listar1.setText(Clientes.totalPagar(idCliente, tipoHab, numDias));
     }
 
 
