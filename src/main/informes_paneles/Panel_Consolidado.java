@@ -74,8 +74,16 @@ public class Panel_Consolidado extends javax.swing.JPanel {
     }
 
 
-    private String obtenerFecha() {
-        return jTextFieldFecha.getText();
+    private String obtenerAnio(){
+        String fecha = jTextFieldFecha.getText();
+        String[] partes = fecha.split("-");
+        return partes[0];
+    }
+
+    private String obtenerMes(){
+        String fecha = jTextFieldFecha.getText();
+        String[] partes = fecha.split("-");
+        return partes[1];
     }
 
     private void setConsolidado(String consolidado) {

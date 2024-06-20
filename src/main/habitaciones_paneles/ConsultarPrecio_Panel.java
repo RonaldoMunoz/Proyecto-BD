@@ -150,14 +150,15 @@ public class ConsultarPrecio_Panel extends javax.swing.JPanel {
         );
     }
 
-    private String jButtonRealizarCambiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRealizarCambiosActionPerformed
+    private void jButtonRealizarCambiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRealizarCambiosActionPerformed
         
-        throw new UnsupportedOperationException("Unimplemented method 'jButtonConsultarPrecioActionPerformed'");
+        
     }
 
-    private String jButtonConsultarPrecioActionPerformed(ActionEvent evt) {
+    private void jButtonConsultarPrecioActionPerformed(ActionEvent evt) {
         
-        throw new UnsupportedOperationException("Unimplemented method 'jButtonConsultarPrecioActionPerformed'");
+        String tipoH = obtenerTipo();
+        
     }
 
     private String obtenerTipo() {

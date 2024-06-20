@@ -103,6 +103,19 @@ public class Panel_VentasXmes extends javax.swing.JPanel {
     }
 
 
+    
+    private String obtenerAnio(){
+        String fecha = jTextFieldFecha.getText();
+        String[] partes = fecha.split("-");
+        return partes[0];
+    }
+
+    private String obtenerMes(){
+        String fecha = jTextFieldFecha.getText();
+        String[] partes = fecha.split("-");
+        return partes[1];
+    }
+
     // Variables declaration 
     private javax.swing.JButton jButtonCalcularVentaxMes;
     private javax.swing.JLabel jLabel1;

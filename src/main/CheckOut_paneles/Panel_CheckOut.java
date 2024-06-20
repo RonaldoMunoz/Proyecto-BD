@@ -147,6 +147,7 @@ public class Panel_CheckOut extends javax.swing.JPanel {
 
 
 
+
     // Variables declaration 
     private javax.swing.JButton jButtonGenerarFactura;
     private javax.swing.JLabel jLabel10;
