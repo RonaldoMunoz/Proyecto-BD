@@ -1,6 +1,8 @@
 
 package informes_paneles;
 
+import db.Informes;
+
 /**
  *
  * @author usuario
@@ -67,12 +69,23 @@ public class Panel_Consolidado extends javax.swing.JPanel {
         jButtonCalcularVentaxMes.setText("Consultar");
         add(jButtonCalcularVentaxMes);
         jButtonCalcularVentaxMes.setBounds(400, 150, 83, 22);
+        jButtonCalcularVentaxMes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCalcularVentaxMes(evt);
+            }
+        });
 
         jTextFieldFecha.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         add(jTextFieldFecha);
         jTextFieldFecha.setBounds(250, 150, 120, 20);
     }
 
+    private void jButtonCalcularVentaxMes(java.awt.event.ActionEvent evt) {
+        int anio = Integer.parseInt(obtenerAnio());
+        int mes = Integer.parseInt(obtenerMes());
+
+        setConsolidado(Informes.obtenerConsolidadoServicios(anio, mes));
+    }
 
     private String obtenerAnio(){
         String fecha = jTextFieldFecha.getText();
@@ -89,9 +102,6 @@ public class Panel_Consolidado extends javax.swing.JPanel {
     private void setConsolidado(String consolidado) {
         label_Consolidado.setText(consolidado);
     }
-
-
-
 
     // Variables declaration 
     private javax.swing.JButton jButtonCalcularVentaxMes;

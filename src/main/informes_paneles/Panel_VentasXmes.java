@@ -1,6 +1,8 @@
 
 package informes_paneles;
 
+import db.Informes;
+
 /**
  *
  * @author usuario
@@ -46,6 +48,11 @@ public class Panel_VentasXmes extends javax.swing.JPanel {
         jButtonCalcularVentaxMes.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jButtonCalcularVentaxMes.setForeground(new java.awt.Color(255, 255, 255));
         jButtonCalcularVentaxMes.setText("Consultar");
+        jButtonCalcularVentaxMes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCalcularVentaxMes(evt);
+            }
+        });
 
         label_CalculadoVentas.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         label_CalculadoVentas.setForeground(new java.awt.Color(255, 255, 255));
@@ -102,7 +109,12 @@ public class Panel_VentasXmes extends javax.swing.JPanel {
         );
     }
 
+    private void jButtonCalcularVentaxMes(java.awt.event.ActionEvent evt) {
+        int anio = Integer.parseInt(obtenerAnio());
+        int mes = Integer.parseInt(obtenerMes());
 
+        label_CalculadoVentas.setText(Informes.calcularVentasMes(anio, mes));
+    }
     
     private String obtenerAnio(){
         String fecha = jTextFieldFecha.getText();
