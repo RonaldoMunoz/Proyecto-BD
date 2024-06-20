@@ -11,9 +11,9 @@ public class JpanelModulos extends javax.swing.JPanel implements CambiarPanel{
 
     public JpanelModulos() {
         initComponents();
+        jButtonGestionarPerfiles.setVisible(false);
     }
 
-    @SuppressWarnings("unchecked")
 
     private void initComponents() {
 
@@ -275,7 +275,7 @@ public class JpanelModulos extends javax.swing.JPanel implements CambiarPanel{
 
 
     // Variables declaration
-
+    
     private javax.swing.JButton jButtonBackTologin;
     private javax.swing.JButton jButtonCheckIn;
     private javax.swing.JButton jButtonCheckOut;

@@ -1,6 +1,8 @@
 
 package gestionarPerfiles;
 
+import gui.Usuario;
+
 /**
  *
  * @author usuario
