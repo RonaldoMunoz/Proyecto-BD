@@ -3,34 +3,42 @@ package db;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Date;
 import java.sql.SQLException;
 
 abstract public class Habitaciones {
-    public static String mostrarHabitacion(String tipo_habitacion) {
+    public static String mostrarHabitacion(String tipoHabitacion, Date fechaInicio, Date fechaFinal) {
         String informacion_hab = "";
-        String sql = "SELECT * FROM habitaciones WHERE tipo = ?";
+        String sql = """
+                SELECT * FROM HABITACIONES H
+                WHERE NOT EXISTS (
+                    SELECT 1 FROM RESERVAS R
+                    WHERE R.HABITACION = H.NUM_HABITACION
+                    AND (R.ESTADO = 'Reservada' OR R.ESTADO = 'Ocupada')
+                    AND R.FECHA_ENTRADA >= ?
+                    AND (R.FECHA_ENTRADA + MAKE_INTERVAL(DAYS => R.NUM_DIAS))::DATE <= ?
+                ) AND H.TIPO = ?
+                """;
 
         try (
             Connection conn = ConexionDB.obtenerConexion();
             PreparedStatement stmt = conn.prepareStatement(sql);
         ) {
-            stmt.setString(1, tipo_habitacion);
+            stmt.setDate(1, fechaInicio);
+            stmt.setDate(2, fechaFinal);
+            stmt.setString(3, tipoHabitacion);
             
             try (ResultSet rs = stmt.executeQuery()) {
                 while(rs.next()) {
                     int num_habitacion = rs.getInt("num_habitacion");
                     double precio = rs.getDouble("precio");
                     String tipo = rs.getString("tipo");
-                    String estado = rs.getString("estado");
-
-                    Integer num_reserva = null;
-                    if (rs.getInt("num_reserva") != 0) num_reserva = rs.getInt("num_reserva");
                         
-                    informacion_hab += "Número de habitación: " + num_habitacion + " Precio: " + precio + " Tipo: " + tipo + " Estado: " + estado + " Número de reserva: " + num_reserva + "\n";
+                    informacion_hab += "Número de habitación: " + num_habitacion + " Precio: " + precio + " Tipo: " + tipo + "\n";
                 }
             }
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
 
         return informacion_hab;
@@ -55,7 +63,7 @@ abstract public class Habitaciones {
                 }
             }
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
 
         return tipo_precio;
@@ -79,7 +87,7 @@ abstract public class Habitaciones {
     }
 
     public static String consultarEstado(int num_habitacion){
-        String sql = "select estado from habitaciones where num_habitacion = ?";
+        String sql = "select estado from reservas where habitacion = ? ";
         String estado = "";
 
         try (
@@ -88,7 +96,7 @@ abstract public class Habitaciones {
         ) {
             stmt.setInt(1, num_habitacion);
 
-            try (ResultSet rs = stmt.executeQuery();) {
+            try (ResultSet rs = stmt.executeQuery()) {
                 if(rs.next()) {
                     String estado_hab = rs.getString("estado");
                            
@@ -104,7 +112,7 @@ abstract public class Habitaciones {
     }
 
     public static Boolean modificarEstado(int num_habitacion, String estado){
-        String sql = "update habitaciones set estado = ? where num_habitacion = ?";
+        String sql = "update reservas set estado = ? where habitacion = ?";
 
         try (
             Connection conn = ConexionDB.obtenerConexion();
@@ -124,13 +132,10 @@ abstract public class Habitaciones {
     //Primer función de CheckIn
     public static String listarHab_Reservadas(int idCliente){
         String sql = """
-                select num_habitacion, tipo 
-                from habitaciones 
-                where num_reserva in(
-                    select num_reserva 
-                    from reservas 
-                    where cliente = ? 
-                    )
+                select r.habitacion, h.tipo
+                from habitaciones h inner join reservas r
+                on h.num_habitacion = r.habitacion 
+                where r.cliente = ?
                 """;   
         String hab_reservadas = "";
 
@@ -140,9 +145,9 @@ abstract public class Habitaciones {
         ) {
             stmt.setInt(1, idCliente);
             
-            try (ResultSet rs = stmt.executeQuery();) {
+            try (ResultSet rs = stmt.executeQuery()) {
                 while(rs.next()) {
-                    int num_hab = rs.getInt("num_habitacion");
+                    int num_hab = rs.getInt("habitacion");
                     String tipo = rs.getString("tipo");
                     
                     hab_reservadas += "El cliente tiene reservada la habitación #" + num_hab + " tipo " + tipo + "\n";
@@ -158,13 +163,9 @@ abstract public class Habitaciones {
     //Segunda función de CheckIn
     public static Boolean cambiarReserxOcupado(int num_habitacion, int idCliente){
         String sql = """
-            update habitaciones 
-                set estado = 'ocupada'
-                where (estado = 'reservada' and num_habitacion = ?) and num_reserva in (
-	                select num_reserva
-	                from reservas
-	                where cliente = ?
-                    )
+            update reservas 
+            set estado = 'Ocupada'
+            where estado = 'Reservada' and habitacion = ? and cliente = ?
                 """;
 
         try (

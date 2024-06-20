@@ -7,6 +7,53 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 abstract public class Clientes {
+    public static boolean existeCliente(int idCliente) {
+        String sql = "SELECT ID FROM CLIENTES WHERE ID = ?";
+
+        try (
+            Connection conn = ConexionDB.obtenerConexion();
+            PreparedStatement stmt = conn.prepareStatement(sql);
+        ) {
+            stmt.setInt(1, idCliente);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                if(rs.next()) {
+                    return true;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return false;
+    }
+
+    public static boolean crearCliente(int idCliente, String nombre, String apellido, String correo, String telefono) {
+        String sql = """
+                "INSERT INTO CLIENTES VALUES (?, ?, ?, ?, ?)";
+
+                INSERT INTO ESPORADICOS VALUES (?);
+                """;
+
+        try (
+            Connection conn = ConexionDB.obtenerConexion();
+            PreparedStatement stmt = conn.prepareStatement(sql);
+        ) {
+            stmt.setInt(1, idCliente);
+            stmt.setString(2, nombre);
+            stmt.setString(3, apellido);
+            stmt.setString(4, correo);
+            stmt.setString(5, telefono);
+            stmt.setInt(6, idCliente);
+
+            if (stmt.executeUpdate() > 0) return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return false;
+    }
+
     public static ArrayList<String> buscarCliente(int idCliente) {
         ArrayList<String> result = new ArrayList<String>();
         String sql = "SELECT C.NOMBRE, C.APELLIDO, P.ID AS TIPO_CLIENTE, H.DESCUENTO FROM CLIENTES C LEFT JOIN HABITUALES H ON C.ID = H.ID LEFT JOIN PERSONAS_NATURALES P ON P.ID = H.ID WHERE C.ID = ?";
@@ -71,12 +118,12 @@ abstract public class Clientes {
         return false;
     }
     public static String totalPagar(int idCliente, String tipo_hab, int num_dias){
-        String mensajeFail = "Verifique que el tipo de habitación coincida con las habitaciones que tiene reservado el cliente";
+        String mensajeFail = "Verifique que el tipo de habitación coincida con las habitaciones que tiene reservada el cliente";
         String mensajeExitoso = "";
         String sql = """
                 select (h.precio * ?) as total_pagar
                 from habitaciones h inner join reservas r 
-                on h.num_reserva = r.num_reserva
+                on h.num_habitacion = r.habitacion
                 inner join clientes c
                 on c.id = r.cliente
                 where (h.tipo = ? and r.cliente = ?)
@@ -96,7 +143,7 @@ abstract public class Clientes {
                     return mensajeExitoso += "El costo total sería de $" + valor;
                 }
             }      
-        }catch (SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 

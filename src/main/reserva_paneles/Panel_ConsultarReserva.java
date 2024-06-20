@@ -1,7 +1,7 @@
 
 package reserva_paneles;
 
-import db.Reserva;
+import db.Reservas;
 
 /**
  *
@@ -104,7 +104,7 @@ private void jButtonMostrarReservarActionPerformed(java.awt.event.ActionEvent ev
         // Realizar aquí la lógica de consulta de la reserva
         // Supongamos que la reserva se encuentra en una lista de reservas llamada 'listaReservas'
         boolean reservaEncontrada = false;
-        for (Reserva reserva : "lista de las reservas que chito no tiene") {
+        for (Reservas reserva : "lista de las reservas que chito no tiene") {
             if (reserva.getId().equals(idReserva)) {
                 // Mostrar la información de la reserva
                 System.out.println("Reserva encontrada:");

@@ -21,7 +21,7 @@ public class CheckOut {
                 WHERE cliente = ? AND num_reserva IN ( 
                     SELECT num_reserva 
                     FROM habitaciones 
-                    WHERE num_habitacion = ? 
+                    WHERE num_habitacion = ?
                 )  
             ) 
         )
