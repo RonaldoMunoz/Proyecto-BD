@@ -21,6 +21,8 @@ public class Panel_ConsultarReserva extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jTextFieldID = new javax.swing.JTextField();
         jButtonMostrarReservar = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextConsultaReserva = new javax.swing.JTextArea();
 
         setBackground(new java.awt.Color(29, 29, 29));
         setMaximumSize(new java.awt.Dimension(640, 640));
@@ -37,13 +39,7 @@ public class Panel_ConsultarReserva extends javax.swing.JPanel {
 
         jLabel2.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Identificacion:");
-
-        jTextFieldID.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldIDActionPerformed(evt);
-            }
-        });
+        jLabel2.setText("Identificacion");
 
         jButtonMostrarReservar.setBackground(new java.awt.Color(29, 29, 29));
         jButtonMostrarReservar.setForeground(new java.awt.Color(255, 255, 255));
@@ -54,81 +50,79 @@ public class Panel_ConsultarReserva extends javax.swing.JPanel {
             }
         });
 
+        jTextConsultaReserva.setBackground(new java.awt.Color(29, 29, 29));
+        jTextConsultaReserva.setColumns(20);
+        jTextConsultaReserva.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        jTextConsultaReserva.setForeground(new java.awt.Color(255, 255, 255));
+        jTextConsultaReserva.setRows(5);
+        jScrollPane2.setViewportView(jTextConsultaReserva);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(260, 260, 260)
-                .addComponent(jLabel7))
-            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabel10))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabel2)
-                .addGap(50, 50, 50)
-                .addComponent(jTextFieldID, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jButtonMostrarReservar))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(260, 260, 260)
+                        .addComponent(jLabel7))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jLabel10))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jButtonMostrarReservar))
+                                .addGap(30, 30, 30)
+                                .addComponent(jTextFieldID, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(10, 10, 10)
                 .addComponent(jLabel7)
-                .addGap(8, 8, 8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel10)
                 .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextFieldID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
-                .addComponent(jButtonMostrarReservar))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addGap(18, 18, 18)
+                .addComponent(jButtonMostrarReservar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
     }
 
-    private void jTextFieldIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIDActionPerformed
-        
+    private void jButtonMostrarReservarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMostrarReservarActionPerformed
+        int idCliente = Integer.parseInt(getCliente());
+
+        jTextConsultaReserva.setText(Reservas.consultarReserva(idCliente));
     }
 
-    private void jButtonMostrarReservarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMostrarReservarActionPerformed
-    /* 
-    // Simulación de consulta de reserva
-    String idReserva = jTextFieldID.getText(); // Obtener la identificación de la reserva
-    if (!idReserva.isEmpty()) {
-        // Realizar aquí la lógica de consulta de la reserva
-        // Supongamos que la reserva se encuentra en una lista de reservas llamada 'listaReservas'
-        boolean reservaEncontrada = false;
-        for (Reservas reserva : "lista de las reservas que chito no tiene") {
-            if (reserva.getId().equals(idReserva)) {
-                // Mostrar la información de la reserva
-                System.out.println("Reserva encontrada:");
-                System.out.println(reserva);
-                reservaEncontrada = true;
-                break;
-            }
-        }
-        if (!reservaEncontrada) {
-            System.out.println("La reserva con ID " + idReserva + " no se encuentra.");
-        }
-    } else {
-        System.out.println("Error: Debes ingresar la identificación de la reserva.");
+    private String getCliente() {
+        return jTextFieldID.getText();
     }
-        */
-    
-}
 
     // Variables declaration
     private javax.swing.JButton jButtonMostrarReservar;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTextArea jTextConsultaReserva;
     private javax.swing.JTextField jTextFieldID;
     // End of variables declaration
 }
