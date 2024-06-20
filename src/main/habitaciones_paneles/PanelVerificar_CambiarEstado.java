@@ -75,13 +75,13 @@ public class PanelVerificar_CambiarEstado extends javax.swing.JPanel {
         jLabel3.setText("Ingresa el numero de la habitación: ");
 
         jRadioButton1.setForeground(new java.awt.Color(29, 29, 29));
-        jRadioButton1.setText("Ocupado");
+        jRadioButton1.setText("Ocupada");
 
         jRadioButton2.setForeground(new java.awt.Color(29, 29, 29));
-        jRadioButton2.setText("Reservado");
+        jRadioButton2.setText("Reservada");
 
         jRadioButton3.setForeground(new java.awt.Color(29, 29, 29));
-        jRadioButton3.setText("Disponible");
+        jRadioButton3.setText("Cancelada");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -198,11 +198,11 @@ public class PanelVerificar_CambiarEstado extends javax.swing.JPanel {
     }
 
     public void setEstado(String estado){
-        if (estado.equals("Ocupado")) {
+        if (estado.equals("Ocupada")) {
             jRadioButton1.setSelected(true);
-        } else if (estado.equals("Reservado")) {
+        } else if (estado.equals("Reservada")) {
             jRadioButton2.setSelected(true);
-        } else if (estado.equals("Disponible")) {
+        } else if (estado.equals("Cancelada")) {
             jRadioButton3.setSelected(true);
         }
     }

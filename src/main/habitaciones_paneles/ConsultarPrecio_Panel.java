@@ -73,7 +73,7 @@ public class ConsultarPrecio_Panel extends javax.swing.JPanel {
         jCoBoxTipoHabitacion.setBackground(new java.awt.Color(29, 29, 29));
         jCoBoxTipoHabitacion.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jCoBoxTipoHabitacion.setForeground(new java.awt.Color(255, 255, 255));
-        jCoBoxTipoHabitacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sencilla", "Doble", "Matrimonial", "Suite Sencilla","Suite Presidencial" }));
+        jCoBoxTipoHabitacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "sencilla", "doble", "matrimonial", "suite sencilla","suite presidencial" }));
         
         jLabel2.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));

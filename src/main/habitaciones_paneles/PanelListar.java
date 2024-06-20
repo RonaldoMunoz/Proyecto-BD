@@ -256,7 +256,7 @@ public class PanelListar extends javax.swing.JPanel {
 
 
     private void setHabitacionesDisponibles(String habitaciones) {
-        jTextHabitacionesDisponible.setText(habitaciones);
+        jTextHabitacionesDisponible1.setText(habitaciones);
     }
     
 
