@@ -63,6 +63,8 @@ public class DatosEstadisticosPanel extends javax.swing.JPanel {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Ingresa el año y el mes (A/M)");
 
+        jLabelServicioMasSolicitado.setForeground(new java.awt.Color(255, 255, 255));
+
         jButtonCalcularVentaxMes.setBackground(new java.awt.Color(29, 29, 29));
         jButtonCalcularVentaxMes.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jButtonCalcularVentaxMes.setForeground(new java.awt.Color(255, 255, 255));
@@ -157,9 +159,9 @@ public class DatosEstadisticosPanel extends javax.swing.JPanel {
         int anio = Integer.parseInt(obtenerAnio());
         int mes = Integer.parseInt(obtenerMes());
 
-        setPorcentajeOcupacion(Double.toString(Informes.calcularPorcentajeOcupacion(anio, mes)));
+        setPorcentajeOcupacion(Double.toString(Informes.calcularPorcentajeOcupacion(anio, mes)) + "%");
         setServicioMasSolicitado(Informes.tipoServicioMasRepetido(anio, mes));
-        setPorcentajeOcupacion(Double.toString(Informes.calcularPorcentajeCancelacion(anio, mes)));
+        setPorcentajeReservarCanceladasd(Double.toString(Informes.calcularPorcentajeCancelacion(anio, mes)) + "%");
     }
 
     private String obtenerAnio(){
