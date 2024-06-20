@@ -4,6 +4,8 @@
  */
 package clientes_paneles;
 
+import java.awt.event.ActionEvent;
+
 /**
  *
  * @author usuario
@@ -55,6 +57,11 @@ public class PanelDescuentos extends javax.swing.JPanel {
         jButtonAceptarNewDescuento.setBackground(new java.awt.Color(29, 29, 29));
         jButtonAceptarNewDescuento.setForeground(new java.awt.Color(255, 255, 255));
         jButtonAceptarNewDescuento.setText("Aceptar");
+        jButtonAceptarNewDescuento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAceptarNewDescuentoActionPerformed(evt);
+            }
+        });
 
         jLabelDescuento.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabelDescuento.setForeground(new java.awt.Color(255, 255, 255));
@@ -116,7 +123,20 @@ public class PanelDescuentos extends javax.swing.JPanel {
                 .addGap(27, 27, 27)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-    }// </editor-fold>//GEN-END:initComponents
+    }
+
+    private void jButtonAceptarNewDescuentoActionPerformed(ActionEvent evt) {
+        
+    }
+
+    private String getjTextNewDescuento() {
+        return jTextNewDescuento.getText();
+    }
+
+    private void actualizarDescuento(String descuento) {
+        jLabelDescuento.setText(descuento);
+    }
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -129,6 +149,7 @@ public class PanelDescuentos extends javax.swing.JPanel {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JTextField jTextNewDescuento;
-    private javax.swing.JLabel label_ConsultaDispo;
+    private javax.swing.JLabel label_ConsultaDispo; // title
+    
     // End of variables declaration//GEN-END:variables
 }

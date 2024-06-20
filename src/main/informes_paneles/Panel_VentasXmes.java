@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
+
 package informes_paneles;
 
 /**
@@ -10,9 +7,7 @@ package informes_paneles;
  */
 public class Panel_VentasXmes extends javax.swing.JPanel {
 
-    /**
-     * Creates new form Panel_VentasXmes
-     */
+
     public Panel_VentasXmes() {
         initComponents();
     }
@@ -108,7 +103,7 @@ public class Panel_VentasXmes extends javax.swing.JPanel {
     }
 
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration 
     private javax.swing.JButton jButtonCalcularVentaxMes;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
@@ -117,5 +112,5 @@ public class Panel_VentasXmes extends javax.swing.JPanel {
     private javax.swing.JTextField jTextFieldFecha;
     private javax.swing.JLabel label_CalculadoVentas;
     private javax.swing.JLabel label_ConsultaDispo;
-    // End of variables declaration//GEN-END:variables
+    // End of variables declaration
 }

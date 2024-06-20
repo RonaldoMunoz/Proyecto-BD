@@ -10,9 +10,8 @@ package gestionarPerfiles;
  */
 public class PanelEliminarUsuarios extends javax.swing.JPanel {
 
-    /**
-     * Creates new form PanelEliminarUsuarios
-     */
+    public static String[] roles = {"Administrador", "Recepcionista", "Contador", "Gerente"};
+
     public PanelEliminarUsuarios() {
         initComponents();
     }
@@ -42,7 +41,7 @@ public class PanelEliminarUsuarios extends javax.swing.JPanel {
         jPanel1.add(jLabel4);
         jLabel4.setBounds(170, 160, 330, 17);
 
-        perfilUser.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        perfilUser.setModel(new javax.swing.DefaultComboBoxModel<>(roles));
         jPanel1.add(perfilUser);
         perfilUser.setBounds(290, 190, 72, 22);
 
@@ -88,9 +87,18 @@ public class PanelEliminarUsuarios extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonCambiarRolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCambiarRolActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonCambiarRolActionPerformed
+    private void jButtonCambiarRolActionPerformed(java.awt.event.ActionEvent evt) {
+        
+    }
+
+    private String obtenerUserName(){
+        return jTextFieldUserName.getText();
+    }
+
+    private String obtenerRol(){
+        return perfilUser.getSelectedItem().toString();
+    }
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

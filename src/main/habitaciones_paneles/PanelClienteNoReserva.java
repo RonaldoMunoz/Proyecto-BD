@@ -1,6 +1,8 @@
 
 package habitaciones_paneles;
 
+import java.awt.event.ActionEvent;
+
 /**
  *
  * @author Ronaldo
@@ -50,17 +52,8 @@ public class PanelClienteNoReserva extends javax.swing.JPanel {
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Numero Habitacion:");
 
-        jTextFieldDIAS.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldDIASActionPerformed(evt);
-            }
-        });
 
-        jTextFieldF_ENTRADA.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldF_ENTRADAActionPerformed(evt);
-            }
-        });
+
 
         jLabel10.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
@@ -69,16 +62,9 @@ public class PanelClienteNoReserva extends javax.swing.JPanel {
         jButtonAsignar.setBackground(new java.awt.Color(29, 29, 29));
         jButtonAsignar.setForeground(new java.awt.Color(255, 255, 255));
         jButtonAsignar.setText("Asignar");
-
-        jTextNombre.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAsignar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextNombreActionPerformed(evt);
-            }
-        });
-
-        jTextFieldAPELLIDO.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldAPELLIDOActionPerformed(evt);
+                jButtonAsignarActionPerformed(evt);
             }
         });
 
@@ -86,41 +72,22 @@ public class PanelClienteNoReserva extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Nombres:");
 
-        jTextFieldID.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldIDActionPerformed(evt);
-            }
-        });
 
         jLabel2.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Identificacion:");
 
-        jTextFieldCORREO.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldCORREOActionPerformed(evt);
-            }
-        });
 
         jLabel3.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Correo:");
 
-        jTextFieldTELEFONO.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldTELEFONOActionPerformed(evt);
-            }
-        });
+
 
         jLabel4.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Telefono:");
 
-        jTextFieldHABITACION.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldHABITACIONActionPerformed(evt);
-            }
-        });
 
         jLabel5.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -235,40 +202,44 @@ public class PanelClienteNoReserva extends javax.swing.JPanel {
                 .addComponent(jButtonAsignar)
                 .addContainerGap(151, Short.MAX_VALUE))
         );
-    }// </editor-fold>//GEN-END:initComponents
+    }
 
-    private void jTextFieldDIASActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDIASActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldDIASActionPerformed
+    private void jButtonAsignarActionPerformed(ActionEvent evt) {
+        
 
-    private void jTextFieldF_ENTRADAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldF_ENTRADAActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldF_ENTRADAActionPerformed
+    }
 
-    private void jTextNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextNombreActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextNombreActionPerformed
+    public String getNombre() {
+        return jTextNombre.getText();
+    }
 
-    private void jTextFieldAPELLIDOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldAPELLIDOActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldAPELLIDOActionPerformed
+    public String getApellido() {
+        return jTextFieldAPELLIDO.getText();
+    }
 
-    private void jTextFieldIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldIDActionPerformed
+    public String getCorreo() {
+        return jTextFieldCORREO.getText();
+    }
 
-    private void jTextFieldCORREOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCORREOActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldCORREOActionPerformed
+    public String getTelefono() {
+        return jTextFieldTELEFONO.getText();
+    }
 
-    private void jTextFieldTELEFONOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldTELEFONOActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldTELEFONOActionPerformed
+    public String getDias() {
+        return jTextFieldDIAS.getText();
+    }
 
-    private void jTextFieldHABITACIONActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldHABITACIONActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldHABITACIONActionPerformed
+    public String getFechaEntrada() {
+        return jTextFieldF_ENTRADA.getText();
+    }
 
+    public String getHabitacion() {
+        return jTextFieldHABITACION.getText();
+    }
+
+    public String getId() {
+        return jTextFieldID.getText();
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAsignar;

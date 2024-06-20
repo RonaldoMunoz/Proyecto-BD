@@ -4,6 +4,8 @@
  */
 package habitaciones_paneles;
 
+import java.awt.event.ActionEvent;
+
 /**
  *
  * @author usuario
@@ -64,6 +66,11 @@ public class PanelListar extends javax.swing.JPanel {
         jButtonListarHabitaciones.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jButtonListarHabitaciones.setForeground(new java.awt.Color(255, 255, 255));
         jButtonListarHabitaciones.setText("Listar");
+        jButtonListarHabitaciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonListarHabitacionesActionPerformed(evt);
+            }
+        });
 
         jTextHabitacionesDisponible.setBackground(new java.awt.Color(29, 29, 29));
         jTextHabitacionesDisponible.setColumns(20);
@@ -117,8 +124,21 @@ public class PanelListar extends javax.swing.JPanel {
                 .addGap(38, 38, 38)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-    }// </editor-fold>//GEN-END:initComponents
+    }
 
+    private void jButtonListarHabitacionesActionPerformed(ActionEvent evt) {
+       
+
+    }
+
+    private String getTipoHabitacion() {
+        return jCoBoxTipoHabitacion.getSelectedItem().toString();
+    }
+
+    private void setHabitacionesDisponibles(String habitaciones) {
+        jTextHabitacionesDisponible.setText(habitaciones);
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonListarHabitaciones;
