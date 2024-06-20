@@ -74,6 +74,15 @@ public class Panel_Clientes_opciones extends javax.swing.JPanel implements Cambi
         jButtonBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/flecha-izquierda.png"))); // NOI18N
         add(jButtonBack);
         jButtonBack.setBounds(40, 540, 120, 50);
+        jButtonBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonBackActionPerformed(evt);
+            }
+
+            private void jButtonBackActionPerformed(ActionEvent evt) {
+                cambiarPanel(GUI_principal.modulosPanel, GUI_principal.Bg);
+            }
+        });
 
         jButtonDescuentoClientes.setBackground(new java.awt.Color(29, 29, 29));
         jButtonDescuentoClientes.setFont(new java.awt.Font("Roboto", 2, 14)); // NOI18N

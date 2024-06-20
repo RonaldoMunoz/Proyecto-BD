@@ -92,7 +92,7 @@ public class PanelListar extends javax.swing.JPanel {
         jCoBoxTipoHabitacion1.setBackground(new java.awt.Color(29, 29, 29));
         jCoBoxTipoHabitacion1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jCoBoxTipoHabitacion1.setForeground(new java.awt.Color(255, 255, 255));
-        jCoBoxTipoHabitacion1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jCoBoxTipoHabitacion1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "sencilla", "doble", "matrimonial", "suite sencilla","suite presidencial" }));
 
         jLabel5.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
