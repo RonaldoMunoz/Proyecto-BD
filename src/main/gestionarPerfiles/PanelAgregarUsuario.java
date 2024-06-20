@@ -1,6 +1,8 @@
 
 package gestionarPerfiles;
 
+import gui.Usuario;
+
 public class PanelAgregarUsuario extends javax.swing.JPanel {
 
     public static String[] roles = {"Administrador", "Recepcionista", "Contador", "Gerente"};
@@ -109,7 +111,12 @@ public class PanelAgregarUsuario extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonCambiarRol1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCambiarRol1ActionPerformed
-       
+        String rol = obtenerRol();
+        String nombreUsuario = obtenerUsuario();
+        String password = obtenerPassword();
+        Usuario nuevoUsuario = new Usuario(rol, nombreUsuario, password);
+        Usuario.listaUser.add(nuevoUsuario);
+    
     }
 
     private String obtenerRol(){

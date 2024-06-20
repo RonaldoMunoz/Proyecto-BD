@@ -35,7 +35,8 @@ public class Panel_CheckOut extends javax.swing.JPanel {
         jButtonGenerarFactura = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextFactura = new javax.swing.JTextArea();
-
+        
+        
         setBackground(new java.awt.Color(29, 29, 29));
         setMaximumSize(new java.awt.Dimension(640, 640));
         setMinimumSize(new java.awt.Dimension(640, 640));
